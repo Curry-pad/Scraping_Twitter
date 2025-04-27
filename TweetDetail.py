@@ -1,8 +1,14 @@
-#import requests
-#import json
+from typing import Optional
 
-def TweetDetail():
+from fastapi import FastAPI
 
-  jsonData = 'aaa'
+app = FastAPI()
 
-  return jsonData
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Optional[str] = None):
+    return {"item_id": item_id, "q": q}
