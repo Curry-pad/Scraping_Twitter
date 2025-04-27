@@ -4,8 +4,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-pip install requests
-import requests
 
 @app.get("/")
 async def root():
