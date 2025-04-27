@@ -1,0 +1,4 @@
+fastapi == 0.88.0
+pathlib == 1.0.1
+starlette == 0.22.0
+uvicorn == 0.20.0
