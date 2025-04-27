@@ -4,6 +4,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+import requests
 
 @app.get("/")
 async def root():
