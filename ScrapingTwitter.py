@@ -32,7 +32,7 @@ def read_item(
 def read_item(
     twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
 ):
-    return ST_TweetDetail.TweetDetail(
+    return ST_TweetDetail.Following(
         twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
     )
 
@@ -40,7 +40,7 @@ def read_item(
 def read_item(
     twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
 ):
-    return ST_TweetDetail.TweetDetail(
+    return ST_TweetDetail.Followers(
         twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
     )
 
