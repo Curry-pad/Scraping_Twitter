@@ -17,5 +17,9 @@ def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
 @app.get("/TweetDetail")
-def read_item():
-    return ST_TweetDetail.TweetDetail()
+def read_item(
+    twitter_domain,target_tweet_id,ct0,auth_token
+):
+    return ST_TweetDetail.TweetDetail(
+        twitter_domain,target_tweet_id,ct0,auth_token
+    )
