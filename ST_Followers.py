@@ -23,7 +23,7 @@ def Followers(
   }
 
   params ={
-    'muteHttpExceptions': 'true'
+    #'muteHttpExceptions': 'true'
   }
   
   #リクエストパラメータチェック
