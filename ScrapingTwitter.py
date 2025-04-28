@@ -27,3 +27,20 @@ def read_item(
     return ST_TweetDetail.TweetDetail(
         twitter_domain,ct0,auth_token,x_client_transaction_id,target_tweet_id
     )
+
+@app.get("/Following")
+def read_item(
+    twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
+):
+    return ST_TweetDetail.TweetDetail(
+        twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
+    )
+
+@app.get("/Followers")
+def read_item(
+    twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
+):
+    return ST_TweetDetail.TweetDetail(
+        twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
+    )
+
