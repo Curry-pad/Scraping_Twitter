@@ -16,14 +16,28 @@ def TweetDetail(
        "content-type": "application/json"
       }
   
+  #リクエストパラメータチェック
+  print('twitter_domain = ' + twitter_domain)
+  print('target_tweet_id = ' + target_tweet_id)
+  print('ct0 = ' + ct0)
+  print('auth_token = ' + auth_token)
+  
   # GETリクエストを送信
   response = requests.get(url, headers=headers)
   
   # レスポンスのステータスコードを表示
   print('ステータスコード:', response.status_code)
-  
+
   #レスポンスをjson形式に変換
   jsonData = response.json()
+  
+  #エラー処理
+  if response.status_code != 200:
+    return {
+      'code' : response.status_code,
+      'message' : 'API実行でエラーが発生しました。',
+      'response' : response
+    }
 
   #レスポンスデータを戻り値としてそのまま返却
   return jsonData
