@@ -34,7 +34,7 @@ def Following(
   print('x-client-transaction-id = ' + x_client_transaction_id)
   print('cursor = ' + cursor)
   
-try:
+  try:
     # GETリクエストを送信
     response = requests.get(url, headers=headers,params=params)
   
