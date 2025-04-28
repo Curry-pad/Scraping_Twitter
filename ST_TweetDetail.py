@@ -27,7 +27,7 @@ def TweetDetail(
   print('auth_token = ' + auth_token)
   
   # GETリクエストを送信
-  response = requests.get(url, headers=headers)
+  response = requests.get(url, headers=headers,params=params)
   
   # レスポンスのステータスコードを表示
   print('ステータスコード:', response.status_code)
