@@ -39,8 +39,8 @@ def TweetDetail(
   if response.status_code != 200:
     return {
       'code' : response.status_code,
-      'message' : 'API実行でエラーが発生しました。'
-      #'response' : jsonData
+      'message' : 'API実行でエラーが発生しました。',
+      'response' : jsonData
     }
 
   #レスポンスデータを戻り値としてそのまま返却
