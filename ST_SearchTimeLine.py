@@ -44,6 +44,11 @@ def SearchTimeLine(
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
 
+    #ステータスコードが200番台ではないのにexceptに飛んでくれないことがある、その対策
+    #検知条件：100で割ったときの商が2でない
+    if response.status_code // 100 != 2:
+      raise RequestException("Request Failed for Twitter API return code " + response.status_code)
+
     #レスポンスをjson形式に変換
     jsonData = response.json()
     
