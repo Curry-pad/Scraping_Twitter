@@ -46,7 +46,7 @@ def Followers(
     if response.status_code // 100 != 2:
       return {
         "code" : response.status_code,
-        "Request Failed for Twitter API return code " + str(response.status_code)
+        "message" : "Request Failed for Twitter API return code " + str(response.status_code)
       }
 
     #レスポンスをjson形式に変換
