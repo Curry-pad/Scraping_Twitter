@@ -1,6 +1,6 @@
 
 def TweetDetail(
-  twitter_domain,target_tweet_id,ct0,auth_token
+  twitter_domain,ct0,auth_token,x_client_transaction_id,target_tweet_id
 ):
   import requests
   import json
@@ -10,7 +10,7 @@ def TweetDetail(
   headers = {
       'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA',
        'Cookie': 'auth_token=' + auth_token + '; ct0=' + ct0 + '; ',
-       'x-client-transaction-id': 'afEyhVO/m1acFsjVzPpj1+XOmkOwveOv7NoQytMZY8NRe7oEdxyETV6GHp3m+SmnBH1Z1GrDbjwnNV2V/CjaKPSI86xZag',
+       'x-client-transaction-id': x_client_transaction_id,
        'x-csrf-token': ct0,
        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
        "content-type": "application/json"
@@ -35,9 +35,9 @@ def TweetDetail(
   #エラー処理
   if response.status_code != 200:
     return {
-      'code' : response.status_code,
-      'message' : 'API実行でエラーが発生しました。',
-      'response' : response
+      #'code' : response.status_code,
+      'message' : 'API実行でエラーが発生しました。'
+      #'response' : response
     }
   
   #レスポンスをjson形式に変換
