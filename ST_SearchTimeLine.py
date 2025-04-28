@@ -45,7 +45,7 @@ def SearchTimeLine(
     print('ステータスコード:', response.status_code)
 
     #ステータスコードが200番台ではないのにexceptに飛んでくれないことがある、その対策
-    #検知条件：100で割ったときの商が2でない
+    #検知条件：ステータスコードを100で割ったときの商が2でない
     if response.status_code // 100 != 2:
       raise RequestException("Request Failed for Twitter API return code " + response.status_code)
 
