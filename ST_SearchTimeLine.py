@@ -33,6 +33,7 @@ def SearchTimeLine(
   print('auth_token = ' + auth_token)
   print('x-client-transaction-id = ' + x_client_transaction_id)
   print('cursor = ' + cursor)
+  print('query' = query)
   print('max_count = ' + max_count)
   print('T_L_Param = ' + T_L_Param)
   
