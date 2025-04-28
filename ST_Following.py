@@ -41,7 +41,7 @@ def Following(
     #ステータスコードが200番台ではないのにexceptに飛んでくれないことがある、その対策
     #検知条件：ステータスコードを100で割ったときの商が2でない
     if response.status_code // 100 != 2:
-      raise requests.exceptions.RequestException("Request Failed for Twitter API return code " + str(response.status_code))
+      raise Exception("Request Failed for Twitter API return code " + str(response.status_code))
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
@@ -53,6 +53,9 @@ def Following(
     #httpステータスコードが200番台でなかった場合、except句に流れる
     print("エラー : ",e)
     #エラーレスポンスを戻り値としてそのまま返却
+    return e
+  except Exception as e:
+    print("エラー : ",e)
     return e
   
   #レスポンスデータを戻り値としてそのまま返却
