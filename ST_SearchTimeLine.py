@@ -24,7 +24,7 @@ def SearchTimeLine(
   }
 
   params ={
-    'muteHttpExceptions': 'true'
+    #'muteHttpExceptions': 'true'
   }
   
   #リクエストパラメータチェック
