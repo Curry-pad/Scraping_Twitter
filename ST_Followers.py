@@ -34,22 +34,21 @@ def Followers(
   print('x-client-transaction-id = ' + x_client_transaction_id)
   print('cursor = ' + cursor)
   
-  # GETリクエストを送信
-  response = requests.get(url, headers=headers,params=params)
+  try:
+    # GETリクエストを送信
+    response = requests.get(url, headers=headers,params=params)
   
-  # レスポンスのステータスコードを表示
-  print('ステータスコード:', response.status_code)
+    # レスポンスのステータスコードを表示
+    print('ステータスコード:', response.status_code)
 
-  #レスポンスをjson形式に変換
-  jsonData = response.json()
+    #レスポンスをjson形式に変換
+    jsonData = response.json()
+    
+  except requests.exceptions.RequestException as e:
+    #httpステータスコードが200番台でなかった場合、except句に流れる
+    print("エラー : ",e)
+    #エラーレスポンスを戻り値としてそのまま返却
+    return e
   
-  #エラー処理
-  if response.status_code != 200:
-    return {
-      'code' : response.status_code,
-      'message' : 'API実行でエラーが発生しました。',
-      'response' : jsonData
-    }
-
   #レスポンスデータを戻り値としてそのまま返却
   return jsonData
