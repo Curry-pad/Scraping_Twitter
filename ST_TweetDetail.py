@@ -1,3 +1,3 @@
 
 def TweetDetail():
-  return {message:'TweetDetailが呼ばれたよ'}
+  return {"message":'TweetDetailが呼ばれたよ'}
