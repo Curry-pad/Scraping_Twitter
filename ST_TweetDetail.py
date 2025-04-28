@@ -17,7 +17,7 @@ def TweetDetail(
       }
 
   params ={
-    'muteHttpExceptions': 'true'
+    #'muteHttpExceptions': 'true'
   }
   
   #リクエストパラメータチェック
