@@ -31,17 +31,17 @@ def TweetDetail(
   
   # レスポンスのステータスコードを表示
   print('ステータスコード:', response.status_code)
+
+  #レスポンスをjson形式に変換
+  jsonData = response.json()
   
   #エラー処理
   if response.status_code != 200:
     return {
-      #'code' : response.status_code,
+      'code' : response.status_code,
       'message' : 'API実行でエラーが発生しました。'
-      #'response' : response
+      #'response' : jsonData
     }
-  
-  #レスポンスをjson形式に変換
-  jsonData = response.json()
 
   #レスポンスデータを戻り値としてそのまま返却
   return jsonData
