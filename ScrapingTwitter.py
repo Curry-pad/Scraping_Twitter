@@ -1,7 +1,11 @@
 from typing import Optional
 from fastapi import FastAPI
 
+#呼び出し先pyファイルたちを定義する
 import ST_TweetDetail
+import ST_Following
+import ST_Followers
+import ST_SearchTimeLine
 
 app = FastAPI()
 
