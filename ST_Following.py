@@ -23,7 +23,7 @@ def Following(
   }
 
   params ={
-    'muteHttpExceptions': 'true'
+    #'muteHttpExceptions': 'true'
   }
   
   #リクエストパラメータチェック
