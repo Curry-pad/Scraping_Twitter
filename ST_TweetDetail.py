@@ -27,7 +27,7 @@ def TweetDetail(
   print('auth_token = ' + auth_token)
   print('x-client-transaction-id = ' + x_client_transaction_id)
   
-try:
+  try:
     # GETリクエストを送信
     response = requests.get(url, headers=headers,params=params)
   
