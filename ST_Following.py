@@ -49,14 +49,14 @@ def Following(
     #レスポンスをjson形式に変換
     jsonData = response.json()
     
-  except requests.exceptions.RequestException as e:
+  except requests.exceptions.RequestException as e1:
     #httpステータスコードが200番台でなかった場合、except句に流れる
-    print("エラー : ",e)
+    print("エラー : ",e1)
     #エラーレスポンスを戻り値としてそのまま返却
-    return e
-  except Exception as e:
-    print("エラー : ",e)
-    return e
+    return e1
+  except Exception as e2:
+    print("エラー : ",e2)
+    return e2
   
   #レスポンスデータを戻り値としてそのまま返却
   return jsonData
