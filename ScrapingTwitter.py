@@ -46,9 +46,9 @@ def read_item(
 
 @app.get("/SearchTimeLine")
 def read_item(
-    twitter_domain,ct0,auth_token,x_client_transaction_id,query,cursor,max_count
+    twitter_domain,ct0,auth_token,x_client_transaction_id,query,cursor,max_count,T_L_Param
 ):
     return ST_SearchTimeLine.SearchTimeLine(
-        twitter_domain,ct0,auth_token,x_client_transaction_id,query,cursor,max_count
+        twitter_domain,ct0,auth_token,x_client_transaction_id,query,cursor,max_count,T_L_Param
     )
 
