@@ -38,6 +38,9 @@ def QuoteTweet(
   print('T_L_Param = ' + T_L_Param)
   
   try:
+
+    print("リクエストURL：" + url)
+    
     # GETリクエストを送信
     response = requests.get(url, headers=headers,params=params)
   
