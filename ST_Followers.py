@@ -35,6 +35,9 @@ def Followers(
   print('cursor = ' + cursor)
   
   try:
+    
+    print("リクエストURL：" + url)
+    
     # GETリクエストを送信
     response = requests.get(url, headers=headers,params=params)
   
