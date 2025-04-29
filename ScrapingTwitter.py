@@ -6,6 +6,7 @@ import ST_TweetDetail
 import ST_Following
 import ST_Followers
 import ST_SearchTimeLine
+import ST_QuoteTweet
 
 app = FastAPI()
 
@@ -55,4 +56,15 @@ def read_item(
     return ST_SearchTimeLine.SearchTimeLine(
         twitter_domain,ct0,auth_token,x_client_transaction_id,query,cursor,max_count,T_L_Param
     )
+
+@app.get("/QuoteTweet")
+def read_item(
+    twitter_domain,ct0,auth_token,x_client_transaction_id,query,cursor,max_count,T_L_Param
+):
+    return ST_QuoteTweet.QuoteTweet(
+        twitter_domain,ct0,auth_token,x_client_transaction_id,query,cursor,max_count,T_L_Param
+    )
+
+
+
 
