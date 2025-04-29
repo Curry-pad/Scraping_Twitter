@@ -28,6 +28,9 @@ def TweetDetail(
   print('x-client-transaction-id = ' + x_client_transaction_id)
   
   try:
+
+    print("リクエストURL：" + url)
+    
     # GETリクエストを送信
     response = requests.get(url, headers=headers,params=params)
   
