@@ -15,3 +15,6 @@ def Write_ExecuteLog(write_text):
   with open(filename, "w") as o:
     print(write_text, file=o)
   
+
+def Create_HTTPErrorMessage(status_code):
+  return "Request Failed for Scraping Twitter by Python returned code " + str(status_code)
