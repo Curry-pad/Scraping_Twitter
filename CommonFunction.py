@@ -14,7 +14,7 @@ def Write_ExecuteLog(write_text):
   fileName = str(datetime.date.today()) + ".log"
 
   #ファイル名：Log_yyyy-mm-dd.log
-  filePath = "/Log/" + fileName
+  filePath = "./Log/" + fileName
   
   if os.path.isfile(filePath) != True:
     print("ファイルがない")
