@@ -10,7 +10,7 @@ def Write_ExecuteLog(write_text):
   #ファイルをフォルダの中に作りたい
   
   #ファイル名：Log_yyyy-mm-dd.log
-  filename = str(datetime.date.today()) + ".log"
+  filename = "/Log/" + str(datetime.date.today()) + ".log"
   
   with open(filename, "w") as o:
     print(write_text, file=o)
