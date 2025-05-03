@@ -5,7 +5,7 @@ def Write_ExecuteLog(write_text):
   import datetime
   
   #フォルダがない場合は作る
-  if os.path.isdir("Log") != False:
+  if os.path.isdir("Log") != True:
     os.mkdir('./Log')
     print("フォルダを作りました")
 
@@ -16,7 +16,7 @@ def Write_ExecuteLog(write_text):
   #ファイル名：Log_yyyy-mm-dd.log
   filePath = "/Log/" + fileName
   
-  if os.path.isfile(filePath) != False:
+  if os.path.isfile(filePath) != True:
     print("ファイルがない")
   
   with open(filePath, "w") as o:
