@@ -2,6 +2,7 @@ from typing import Optional
 from fastapi import FastAPI
 
 #呼び出し先pyファイルたちを定義する
+import CommonFunction
 import ST_TweetDetail
 import ST_Following
 import ST_Followers
@@ -16,6 +17,7 @@ import json
 @app.get("/")
 async def root():
     print("実処理なし")
+    CommonFunction.Write_ExecuteLog("Test")
     return {
         "code" : 200,
         "message": "Hello World"
