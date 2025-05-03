@@ -20,7 +20,7 @@ def Write_ExecuteLog(write_text):
     print("ファイルがない")
   
   with open(filePath, "w") as o:
-    print("[" + datetime.datetime.now() + "]" + write_text, file=o)
+    print("[" + str(datetime.datetime.now()) + "]" + write_text, file=o)
   
 
 def Create_HTTPErrorMessage(status_code):
