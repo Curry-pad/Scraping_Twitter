@@ -22,6 +22,7 @@ def TweetDetail(
     'cache-control' : "no-cache",
     'Pragma' : "no-cache",
     'Priority' : "u=1, i",
+    'referer' : "https://" + twitter_domain + "/i/status/" + target_tweet_id,
     'Sec-ch-ua' : '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
     'Sec-ch-ua-Mobile' : "?0",
     'Sec-ch-ua-Platform' : '"Windows"',
