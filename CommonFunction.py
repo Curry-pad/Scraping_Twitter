@@ -5,7 +5,8 @@ def Write_ExecuteLog(write_text):
   import datetime
   
   #フォルダがない場合は作る
-  os.mkdir('./Log')
+  if os.path.isdir("Log") != False:
+    os.mkdir('./Log')
 
   #ファイルがない場合は作る
   #ファイルをフォルダの中に作りたい
