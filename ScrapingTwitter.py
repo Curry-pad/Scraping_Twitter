@@ -17,7 +17,7 @@ import json
 @app.get("/")
 async def root():
     print("実処理なし")
-    CommonFunction.Write_ExecuteLog("Test")
+    #CommonFunction.Write_ExecuteLog("Test")
     return {
         "code" : 200,
         "message": "Hello World"
