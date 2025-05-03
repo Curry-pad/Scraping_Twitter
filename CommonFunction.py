@@ -16,7 +16,7 @@ def Write_ExecuteLog(write_text):
   #ファイル名：Log_yyyy-mm-dd.log
   filePath = "/Log/" + fileName
   
-  if os.path.isfile(file_path) != False:
+  if os.path.isfile(filePath) != False:
     
   
   with open(filePath, "w") as o:
