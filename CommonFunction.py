@@ -17,7 +17,7 @@ def Write_ExecuteLog(write_text):
   filePath = "/Log/" + fileName
   
   if os.path.isfile(filePath) != False:
-    
+    print("ファイルがない")
   
   with open(filePath, "w") as o:
     print("[" + datetime.datetime.now() + "]" + write_text, file=o)
