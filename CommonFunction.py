@@ -13,13 +13,13 @@ def Write_ExecuteLog(write_text):
   #ファイルをフォルダの中に作りたい
   fileName = str(datetime.date.today()) + ".log"
 
+  #ファイル名：Log_yyyy-mm-dd.log
+  filePath = "/Log/" + fileName
+  
   if os.path.isfile(file_path) != False:
     
   
-  #ファイル名：Log_yyyy-mm-dd.log
-  filename = "/Log/" + fileName
-  
-  with open(filename, "w") as o:
+  with open(filePath, "w") as o:
     print("[" + datetime.datetime.now() + "]" + write_text, file=o)
   
 
