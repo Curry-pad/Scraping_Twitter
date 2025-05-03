@@ -4,6 +4,7 @@ def Following(
 ):
   import requests
   import json
+  import CommonFunction
 
   query_id = 'C1qZ6bs-L3oc_TKSZyxkXQ'
 
@@ -46,7 +47,7 @@ def Following(
     if response.status_code // 100 != 2:
       return {
         "code" : response.status_code,
-        "message" : "Request Failed for Scraping Twitter by Python returned code " + str(response.status_code)
+        "message" : CommonFunction.Create_HTTPErrorMessage(response.status_code)
       }
 
     #レスポンスをjson形式に変換
