@@ -1,4 +1,4 @@
-
+#うまくいかない
 def Write_ExecuteLog(write_text):
 
   import os
