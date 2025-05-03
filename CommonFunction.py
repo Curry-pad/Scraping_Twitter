@@ -2,6 +2,7 @@
 def Write_ExecuteLog(write_text):
 
   import os
+  import datetime
   
   #フォルダがない場合は作る
   os.mkdir('./Log')
@@ -13,7 +14,7 @@ def Write_ExecuteLog(write_text):
   filename = "/Log/" + str(datetime.date.today()) + ".log"
   
   with open(filename, "w") as o:
-    print(write_text, file=o)
+    print("[" + datetime.datetime.now() + "]" + write_text, file=o)
   
 
 def Create_HTTPErrorMessage(status_code):
