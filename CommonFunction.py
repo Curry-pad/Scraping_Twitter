@@ -7,12 +7,17 @@ def Write_ExecuteLog(write_text):
   #フォルダがない場合は作る
   if os.path.isdir("Log") != False:
     os.mkdir('./Log')
+    print("フォルダを作りました")
 
   #ファイルがない場合は作る
   #ファイルをフォルダの中に作りたい
+  fileName = str(datetime.date.today()) + ".log"
+
+  if os.path.isfile(file_path) != False:
+    
   
   #ファイル名：Log_yyyy-mm-dd.log
-  filename = "/Log/" + str(datetime.date.today()) + ".log"
+  filename = "/Log/" + fileName
   
   with open(filename, "w") as o:
     print("[" + datetime.datetime.now() + "]" + write_text, file=o)
