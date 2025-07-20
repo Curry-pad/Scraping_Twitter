@@ -6,7 +6,9 @@ def Followers(
   import json
   import CommonFunction
 
-  query_id = 'Elc_-qTARceHpztqhI9PQA'
+  #query_id = 'Elc_-qTARceHpztqhI9PQA'
+  #2025/07/20 クエリIDが変わった
+  query_id = 'k8IHkYttROUDoDNevQ7Ehw'
 
   #カーソルが送られなかった場合
   if cursor == 'undefined':
