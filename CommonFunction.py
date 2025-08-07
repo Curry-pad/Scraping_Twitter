@@ -23,5 +23,7 @@ def Write_ExecuteLog(write_text):
     print("[" + str(datetime.datetime.now()) + "]" + write_text, file=o)
   
 
-def Create_HTTPErrorMessage(status_code):
-  return "Request Failed for Scraping Twitter by Python returned code " + str(status_code)
+def Create_HTTPErrorMessage(status_code,detail):
+  return "Request Failed for Scraping Twitter by Python returned code " + str(status_code) + "\n" +
+  detail
+  
