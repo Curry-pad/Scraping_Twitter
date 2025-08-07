@@ -24,6 +24,5 @@ def Write_ExecuteLog(write_text):
   
 
 def Create_HTTPErrorMessage(status_code,detail):
-  return "Request Failed for Scraping Twitter by Python returned code " + str(status_code) + "\n" +
-  detail
+  return "Request Failed for Scraping Twitter by Python returned code " + str(status_code) + "\n" + detail
   
