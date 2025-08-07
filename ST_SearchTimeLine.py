@@ -53,7 +53,7 @@ def SearchTimeLine(
     if response.status_code // 100 != 2:
       return {
         "code" : response.status_code,
-        "message" : CommonFunction.Create_HTTPErrorMessage(response.status_code)
+        "message" : CommonFunction.Create_HTTPErrorMessage(response.status_code,response.text)
       }
 
     #レスポンスをjson形式に変換
