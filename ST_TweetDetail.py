@@ -73,6 +73,13 @@ def TweetDetail(
     response.encoding = 'utf-8'
     #response.encoding = 'SHIFT_JIS'
     print('文字コード（修正後）：', response.encoding)
+
+    # バイトデータを確認
+    content = response.content
+    
+    # 正しいエンコーディングでデコード
+    text = content.decode('utf-8')  # または適切な文字コード
+    print(text)
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
