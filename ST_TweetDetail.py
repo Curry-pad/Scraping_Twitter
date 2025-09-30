@@ -68,11 +68,11 @@ def TweetDetail(
     # GETリクエストを送信
     response = requests.get(url, headers=headers)
 
-    print('文字コード（修正前）：', response.encoding)
+    print('文字コード：', response.encoding)
     #response.encoding = response.apparent_encoding #これを使うとなぜかNoneになってしまう
-    response.encoding = 'utf-8'
+    #response.encoding = 'utf-8'
     #response.encoding = 'SHIFT_JIS'
-    print('文字コード（修正後）：', response.encoding)
+    #print('文字コード（修正後）：', response.encoding)
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
