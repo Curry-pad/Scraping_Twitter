@@ -72,9 +72,15 @@ def TweetDetail(
     print('レスポンスヘッダー：',response.headers)
     print('バイナリデータ：',response.content)
 
+    # バイトデータからエンコーディングを推測
+    result = chardet.detect(response.content)
+    r_encoding = result['encoding']
+
+    print('データの文字コードはおそらく：',r_encoding)
+    
     #バイナリデータを文字列に変換
-    #decoded_text = response.content.decode('utf-8')
-    #print('変換後：',decoded_text)
+    decoded_text = response.content.decode(r_encoding)
+    print('変換後：',decoded_text)
 
     print('文字コード（修正前）：', response.encoding)
     response.encoding = response.apparent_encoding #これを使うとなぜかNoneになってしまう
