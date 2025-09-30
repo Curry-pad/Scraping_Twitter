@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 def TweetDetail(
   twitter_domain,ct0,auth_token,x_client_transaction_id,target_tweet_id
@@ -68,6 +67,9 @@ def TweetDetail(
     
     # GETリクエストを送信
     response = requests.get(url, headers=headers)
+
+    #文字コードを明示的に宣言（文字化け対策）
+    response.encoding = 'utf-8'  # または 'shift_jis' など
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
