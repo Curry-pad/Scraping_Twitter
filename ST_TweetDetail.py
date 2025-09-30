@@ -68,9 +68,10 @@ def TweetDetail(
     # GETリクエストを送信
     response = requests.get(url, headers=headers)
 
-    #response.encoding = response.apparent_encoding
-    response.encoding = 'utf-8'
-    print('文字コード：', response.encoding)
+    print('文字コード（修正前）：', response.encoding)
+    response.encoding = response.apparent_encoding
+    #response.encoding = 'utf-8'
+    print('文字コード：（修正後）', response.encoding)
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
