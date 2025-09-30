@@ -33,7 +33,7 @@ def TweetDetail(
     #"content-type": "application/x-www-form-urlencoded",
     "method" : "GET",
     "accept" : "*/*",
-    "accept-encoding" : "gzip, deflate, br, zstd",
+    "accept-encoding" : "gzip, deflate, br",
     "accept-language" : "ja,en-US;q=0.9,en;q=0.8",
     'cache-control' : "no-cache",
     'Pragma' : "no-cache",
