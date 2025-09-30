@@ -5,6 +5,7 @@ def TweetDetail(
   import requests
   import json
   import CommonFunction
+  import chardet
   
   #query_id = "_8aYOgEDz35BrBcBal1-_w"
   #2025/05/04　クエリID変更対応
@@ -68,11 +69,11 @@ def TweetDetail(
     # GETリクエストを送信
     response = requests.get(url, headers=headers)
 
-    print('文字コード：', response.encoding)
-    #response.encoding = response.apparent_encoding #これを使うとなぜかNoneになってしまう
+    print('文字コード（修正前）：', response.encoding)
+    response.encoding = response.apparent_encoding #これを使うとなぜかNoneになってしまう
     #response.encoding = 'utf-8'
     #response.encoding = 'SHIFT_JIS'
-    #print('文字コード（修正後）：', response.encoding)
+    print('文字コード（修正後）：', response.encoding)
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
