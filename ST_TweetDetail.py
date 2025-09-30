@@ -70,6 +70,7 @@ def TweetDetail(
 
     # encodingを追加（正しい文字コードを自動的に推測して、選んでくれる）
     response.encoding = response.apparent_encoding
+    print('文字コード：', response.encoding)
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
