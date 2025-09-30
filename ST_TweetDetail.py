@@ -70,7 +70,7 @@ def TweetDetail(
     response = requests.get(url, headers=headers)
     
     print('レスポンスヘッダー：',response.headers)
-    print('レスポンスボディ：',response.content)
+    #print('バイナリデータ：',response.content)
 
     print('文字コード（修正前）：', response.encoding)
     response.encoding = response.apparent_encoding #これを使うとなぜかNoneになってしまう
