@@ -68,9 +68,9 @@ def TweetDetail(
     
     # GETリクエストを送信
     response = requests.get(url, headers=headers)
-
-    r_headers = response.headers
-    print('レスポンスヘッダー：',r_headers)
+    
+    print('レスポンスヘッダー：',response.headers)
+    print('レスポンスボディ：',response.content)
 
     print('文字コード（修正前）：', response.encoding)
     response.encoding = response.apparent_encoding #これを使うとなぜかNoneになってしまう
