@@ -3,6 +3,7 @@ def TweetDetail(
   twitter_domain,ct0,auth_token,x_client_transaction_id,target_tweet_id
 ):
   import requests
+  import cchardet
   import json
   import CommonFunction
   
@@ -68,8 +69,7 @@ def TweetDetail(
     # GETリクエストを送信
     response = requests.get(url, headers=headers)
 
-    # encodingを追加（正しい文字コードを自動的に推測して、選んでくれる）
-    response.encoding = response.apparent_encoding
+    response.encoding = cchardet.detect(response.content)["encoding"]
     print('文字コード：', response.encoding)
   
     # レスポンスのステータスコードを表示
