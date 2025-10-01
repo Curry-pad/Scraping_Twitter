@@ -80,7 +80,7 @@ def TweetDetail(
     #エンコードの自動検出に失敗した場合は、無理やり文字コードを設定。何にすればよいのか…。
     if a_encoding == None:
       print('エンコード自動検出失敗')
-      response.encoding = 'cp932'
+      response.encoding = 'shift-jis'
     else:
       print('エンコード自動検出成功')
       response.encoding = a_encoding
