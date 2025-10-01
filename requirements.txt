@@ -4,3 +4,4 @@ starlette == 0.22.0
 uvicorn == 0.20.0
 requests
 chardet
+charset-normalizer
