@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 def TweetDetail(
   twitter_domain,ct0,auth_token,x_client_transaction_id,target_tweet_id
