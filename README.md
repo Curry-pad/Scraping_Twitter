@@ -1,2 +1,2 @@
-# Tweet_Detail
-ツイート情報を取得するAPIを呼び出すAPI。
+# Scraping_Twitter
+頭に「ス」の付く技術を使ってTwitterの内部APIを叩き、Twitterサーバからデータを取得するAPI。
