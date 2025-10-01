@@ -7,6 +7,7 @@ def TweetDetail(
   import json
   import CommonFunction
   import chardet
+  from charset_normalizer import detect
   
   #query_id = "_8aYOgEDz35BrBcBal1-_w"
   #2025/05/04　クエリID変更対応
@@ -81,7 +82,10 @@ def TweetDetail(
     #エンコードの自動検出に失敗した場合は、無理やり文字コードを設定。何にすればよいのか…。
     if a_encoding == None:
       print('エンコード自動検出失敗')
-      response.encoding = 'utf-8'
+      # エンコーディングを推測
+      detected = detect(response.content)
+      response.encoding = detected['encoding']
+      #response.encoding = 'utf-8'
     else:
       print('エンコード自動検出成功')
       response.encoding = a_encoding
