@@ -83,9 +83,10 @@ def TweetDetail(
     if a_encoding == None:
       print('エンコード自動検出失敗')
       # エンコーディングを推測
-      detected = detect(response.content)
-      response.encoding = detected['encoding']
-      #response.encoding = 'utf-8'
+      #※そもそもボディ自体が文字化けしているしているので、推測もうまくいかない。
+      #detected = detect(response.content)
+      #response.encoding = detected['encoding']
+      response.encoding = 'utf-8'
     else:
       print('エンコード自動検出成功')
       response.encoding = a_encoding
