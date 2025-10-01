@@ -101,8 +101,8 @@ def TweetDetail(
       }
 
     #レスポンスをjson形式に変換
-    #jsonData = response.json()
-    jsonData = json.dumps(response)
+    jsonData = response.json()
+    #jsonData = json.dumps(response)
   
   except requests.exceptions.RequestException as e:
     #httpステータスコードが200番台でなかった場合、except句に流れる
