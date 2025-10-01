@@ -72,21 +72,19 @@ def TweetDetail(
     print('レスポンスヘッダー：',response.headers)
     print('バイナリデータ：',response.content)
 
-    #※以下、うまくいかない
-    # バイトデータからエンコーディングを推測
-    #result = chardet.detect(response.content)
-    #r_encoding = result['encoding']
-
-    #print('データの文字コードはおそらく：',r_encoding)
-    
-    #バイナリデータを文字列に変換
-    #decoded_text = response.content.decode(r_encoding)
-    #print('変換後：',decoded_text)
-
     print('文字コード（修正前）：', response.encoding)
-    response.encoding = response.apparent_encoding #これを使うとなぜかNoneになってしまう
-    #response.encoding = 'utf-8'
-    #response.encoding = 'SHIFT_JIS'
+
+    #自動検出したエンコード
+    a_encoding = response.apparent_encoding
+
+    #エンコードの自動検出に失敗した場合は、無理やり文字コードを設定。何にすればよいのか…。
+    if a_encoding == 'None':
+      print('エンコード自動検出失敗')
+      response.encoding = 'shift-jis'
+    else:
+      print('エンコード自動検出成功')
+      response.encoding = response.apparent_encoding
+    
     print('文字コード（修正後）：', response.encoding)
   
     # レスポンスのステータスコードを表示
