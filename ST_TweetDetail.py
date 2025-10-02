@@ -90,10 +90,10 @@ def TweetDetail(
       #※そもそもボディ自体が文字化けしているしているので、推測もうまくいかない。
       #detected = detect(response.content)
       #response.encoding = detected['encoding']
-      response.encoding = 'euc-jp'
-
+      response.encoding = 'utf-8'
+      
       #このまま進んでもJSON変換のところでエラーになってしまうだけなので、文字化けしたデータそのものをそのままレスポンスとして返す
-      #return response.content
+      return response.content
       
     else:
       print('エンコード自動検出成功')
