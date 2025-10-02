@@ -8,6 +8,7 @@ def TweetDetail(
   import CommonFunction
   import chardet
   from charset_normalizer import detect
+  from bs4 import BeautifulSoup
   
   #query_id = "_8aYOgEDz35BrBcBal1-_w"
   #2025/05/04　クエリID変更対応
@@ -77,6 +78,10 @@ def TweetDetail(
     
     print('レスポンスヘッダー：',response.headers)
     print('バイナリデータ：',response.content)
+
+    # BeautifulSoupでエンコーディングを自動判定
+    soup = BeautifulSoup(response.content, 'html.parser')
+    print(soup.prettify())
 
     print('文字コード（修正前）：', response.encoding)
 
