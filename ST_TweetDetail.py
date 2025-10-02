@@ -92,9 +92,6 @@ def TweetDetail(
       #response.encoding = detected['encoding']
       response.encoding = 'utf-8'
       
-      #このまま進んでもJSON変換のところでエラーになってしまうだけなので、文字化けしたデータそのものをそのままレスポンスとして返す
-      return response.content
-      
     else:
       print('エンコード自動検出成功')
       response.encoding = a_encoding
@@ -115,7 +112,6 @@ def TweetDetail(
 
     #レスポンスをjson形式に変換
     jsonData = response.json()
-    #jsonData = json.dumps(response)
   
   except requests.exceptions.RequestException as e:
     #httpステータスコードが200番台でなかった場合、except句に流れる
