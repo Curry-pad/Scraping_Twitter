@@ -5,4 +5,4 @@ uvicorn == 0.20.0
 requests
 chardet
 charset-normalizer
-bs4
+beautifulsoup4
