@@ -16,7 +16,7 @@ def CreateTweet(
       "tweet_text": tw_text,
       "dark_request": False,
       "semantic_annotation_ids": [],
-      "disallowed_reply_options": null
+      "disallowed_reply_options": None
     },
     "features": {
       "premium_content_api_read_enabled": False,
