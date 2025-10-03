@@ -76,4 +76,11 @@ def read_item(
         twitter_domain,ct0,auth_token,x_client_transaction_id,uid_query
     )
 
+@app.get("/CreateTweet")
+def read_item(
+    twitter_domain,ct0,auth_token,x_client_transaction_id,tw_text,Reply_Avail_Setting,media_entities
+):
+    return ST_UsersLookup.CreateTweet(
+        twitter_domain,ct0,auth_token,x_client_transaction_id,tw_text,Reply_Avail_Setting,media_entities
+    )
 
