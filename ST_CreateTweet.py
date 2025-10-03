@@ -67,8 +67,8 @@ def CreateTweet(
   #不要か？
   params ={
     #'muteHttpExceptions': 'True',
-    contentType: 'application/json',
-    payload : payload
+    "contentType": 'application/json',
+    "payload" : payload
   }
   
   #リクエストパラメータチェック
