@@ -68,7 +68,7 @@ def CreateTweet(
   params ={
     #'muteHttpExceptions': 'True',
     "contentType": 'application/json',
-    "payload" : payload
+    "payload" : options
   }
   
   #リクエストパラメータチェック
@@ -84,7 +84,7 @@ def CreateTweet(
     print("リクエストURL：" + url)
     
     # GETリクエストを送信
-    response = requests.post(url, headers=headers,json=payload)
+    response = requests.post(url, headers=headers,json=options)
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
