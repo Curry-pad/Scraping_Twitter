@@ -9,6 +9,7 @@ import ST_Followers
 import ST_SearchTimeLine
 import ST_QuoteTweet
 import ST_UsersLookup
+import ST_CreateTweet
 
 app = FastAPI()
 
@@ -80,7 +81,7 @@ def read_item(
 def read_item(
     twitter_domain,ct0,auth_token,x_client_transaction_id,tw_text,Reply_Avail_Setting,media_entities
 ):
-    return ST_UsersLookup.CreateTweet(
+    return ST_CreateTweet.CreateTweet(
         twitter_domain,ct0,auth_token,x_client_transaction_id,tw_text,Reply_Avail_Setting,media_entities
     )
 
