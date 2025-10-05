@@ -8,7 +8,7 @@ def Twikit_Login(
   
   client = Client("ja-JP")
   
-  client.login(
+  await client.login(
     auth_info_1=user_name,
     password=password
   )
