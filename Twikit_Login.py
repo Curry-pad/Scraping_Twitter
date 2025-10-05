@@ -12,7 +12,7 @@ def Twikit_Login(
   client = Client('ja-JP')
 
   print("ユーザ名",user_name)
-  pront("パスワード",pass_word)
+  print("パスワード",pass_word)
   
   async def main():
       await client.login(
