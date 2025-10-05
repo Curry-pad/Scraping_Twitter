@@ -10,6 +10,7 @@ import ST_SearchTimeLine
 import ST_QuoteTweet
 import ST_UsersLookup
 import ST_CreateTweet
+import Twikit_Login
 
 app = FastAPI()
 
@@ -85,3 +86,10 @@ def read_item(
         twitter_domain,ct0,auth_token,x_client_transaction_id,tw_text,Reply_Avail_Setting,media_entities
     )
 
+@app.get("/Twikit_Login")
+def read_item(
+    user_name,password
+):
+    return Twikit_Login.Twikit_Login(
+        user_name,password
+    )
