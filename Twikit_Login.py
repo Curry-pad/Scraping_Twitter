@@ -6,6 +6,8 @@ def Twikit_Login(
   # with文で書き込む方法もあるが、今回は省略
   from twikit import Client
 
+  import asyncio
+
   # Initialize client
   client = Client('ja-JP')
   
