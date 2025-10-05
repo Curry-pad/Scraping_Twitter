@@ -11,8 +11,8 @@ def Twikit_Login(
   # Initialize client
   client = Client('ja-JP')
 
-  print("ユーザ名",user_name)
-  print("パスワード",pass_word)
+  print("ユーザ名：",user_name)
+  print("パスワード：",pass_word)
   
   async def main():
       await client.login(
