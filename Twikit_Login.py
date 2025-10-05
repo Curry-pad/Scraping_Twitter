@@ -18,7 +18,7 @@ def Twikit_Login(
       await client.login(
           auth_info_1=user_name,
           #auth_info_2=EMAIL,
-          password=pass_word,
+          password=pass_word
           #cookies_file='cookies.json'
       )
   
