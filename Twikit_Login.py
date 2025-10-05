@@ -1,5 +1,5 @@
 #https://qiita.com/jasoncitronx/items/74b4ebcb20814729dbd0
-def Twikit_Login(
+async def Twikit_Login(
   user_name,password
 ):
   
@@ -8,7 +8,7 @@ def Twikit_Login(
   
   client = Client("ja-JP")
   
-  client.login(
+  await client.login(
     auth_info_1=user_name,
     password=password
   )
