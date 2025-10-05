@@ -6,3 +6,4 @@ requests
 chardet
 charset-normalizer
 beautifulsoup4
+twikit
