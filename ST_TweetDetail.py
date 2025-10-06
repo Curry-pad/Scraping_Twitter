@@ -3,7 +3,9 @@
 def TweetDetail(
   twitter_domain,ct0,auth_token,x_client_transaction_id,target_tweet_id
 ):
-  import requests
+  
+  #import requests
+  from curl_cffi import requests
   import json
   import CommonFunction
   import chardet
