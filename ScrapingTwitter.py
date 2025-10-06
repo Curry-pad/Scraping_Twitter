@@ -11,6 +11,7 @@ import ST_QuoteTweet
 import ST_UsersLookup
 import ST_CreateTweet
 import Twikit_Login
+import Get_XClientTransactionId
 
 app = FastAPI()
 
@@ -92,4 +93,12 @@ def read_item(
 ):
     return Twikit_Login.Twikit_Login(
         user_name,password
+    )
+
+@app.get("/Get_XClientTransactionId")
+def read_item(
+    endPointURL
+):
+    return Get_XClientTransactionId.Get_XClientTransactionId(
+        endPointURL
     )
