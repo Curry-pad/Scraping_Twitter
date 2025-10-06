@@ -12,6 +12,7 @@ import ST_UsersLookup
 import ST_CreateTweet
 import Twikit_Login
 import Get_XClientTransactionId
+import TweeterPy
 
 app = FastAPI()
 
@@ -102,3 +103,7 @@ def read_item(
     return Get_XClientTransactionId.Get_XClientTransactionId(
         endPointURL
     )
+
+@app.get("/TweeterPy")
+def read_item():
+    return TweeterPy.TweeterPy()
