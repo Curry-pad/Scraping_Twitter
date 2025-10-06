@@ -85,25 +85,7 @@ def TweetDetail(
     #soup = BeautifulSoup(response.content, 'html.parser')
     #print(soup.prettify())
 
-    print('文字コード（修正前）：', response.encoding)
-
-    #自動検出したエンコード
-    #a_encoding = response.apparent_encoding
-
-    #エンコードの自動検出に失敗した場合は、無理やり文字コードを設定。何にすればよいのか…。
-    if a_encoding == None:
-      print('エンコード自動検出失敗')
-      # エンコーディングを推測
-      #※そもそもボディ自体が文字化けしているしているので、推測もうまくいかない。
-      #detected = detect(response.content)
-      #response.encoding = detected['encoding']
-      response.encoding = 'utf-8'
-      
-    else:
-      print('エンコード自動検出成功')
-      response.encoding = a_encoding
-    
-    print('文字コード（修正後）：', response.encoding)
+    print('文字コード：', response.encoding)
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
