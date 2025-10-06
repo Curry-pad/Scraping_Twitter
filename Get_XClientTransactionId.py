@@ -27,7 +27,8 @@ def Get_XClientTransactionId(
   home_page_response = bs4.BeautifulSoup(home_page.content, 'html.parser')
 
   print('ホームページレスポンス②',home_page_response)
-  
+
+  return home_page_response
   
   # GET ondemand.s FILE RESPONSE
   ondemand_file_url = get_ondemand_file_url(response=home_page_response)
