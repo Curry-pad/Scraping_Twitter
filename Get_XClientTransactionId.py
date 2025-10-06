@@ -12,16 +12,21 @@ def Get_XClientTransactionId(
   # INITIALIZE SESSION
   session = requests.Session()
   session.headers = generate_headers()
-  
+
+  print('ヘッダー：',session.headers)
   
   # GET HOME PAGE RESPONSE
   # required only when hitting twitter.com but not x.com
   # returns bs4.BeautifulSoup object
   home_page_response = handle_x_migration(session=session)
+
+  print('ホームページレスポンス①',home_page_response)
   
   # for x.com no migration is required, just simply do
   home_page = session.get(url="https://x.com")
   home_page_response = bs4.BeautifulSoup(home_page.content, 'html.parser')
+
+  print('ホームページレスポンス②',home_page_response)
   
   
   # GET ondemand.s FILE RESPONSE
