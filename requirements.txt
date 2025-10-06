@@ -1,4 +1,4 @@
---upgrade pip
+upgrade pip
 fastapi == 0.88.0
 pathlib == 1.0.1
 starlette == 0.22.0
