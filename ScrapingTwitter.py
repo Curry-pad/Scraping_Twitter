@@ -90,10 +90,10 @@ def read_item(
 
 @app.get("/Twikit_Login")
 def read_item(
-    user_name,password
+    user_name,EMAIL,password
 ):
     return Twikit_Login.Twikit_Login(
-        user_name,password
+        user_name,EMAIL,password
     )
 
 @app.get("/Get_XClientTransactionId")
