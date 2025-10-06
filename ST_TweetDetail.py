@@ -3,7 +3,7 @@
 def TweetDetail(
   twitter_domain,ct0,auth_token,x_client_transaction_id,target_tweet_id
 ):
-  
+  #curl_cffiを使うように変えたら、レスポンスが文字化けする事態を是正することに成功した！！！
   #import requests
   from curl_cffi import requests
   import json
