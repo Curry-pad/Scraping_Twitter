@@ -9,3 +9,5 @@ beautifulsoup4
 twikit
 XClientTransaction
 tweeterpy
+curl_cffi
+
