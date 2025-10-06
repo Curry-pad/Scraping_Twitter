@@ -8,3 +8,4 @@ charset-normalizer
 beautifulsoup4
 twikit
 XClientTransaction
+tweeterpy
