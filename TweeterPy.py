@@ -1,7 +1,7 @@
 from tweeterpy import TweeterPy
 from tweeterpy.util import find_nested_key
 
-def TweeterPy():
+def TweeterPy_Test():
   
   # proxy = {'http': 'proxy_here', 'https': 'proxy_here'}
   proxy = None
