@@ -106,4 +106,4 @@ def read_item(
 
 @app.get("/TweeterPy")
 def read_item():
-    return TweeterPy.TweeterPy()
+    return TweeterPy.TweeterPy_Test()
