@@ -82,13 +82,13 @@ def TweetDetail(
     print('バイナリデータ：',response.content)
 
     # BeautifulSoupでエンコーディングを自動判定
-    soup = BeautifulSoup(response.content, 'html.parser')
-    print(soup.prettify())
+    #soup = BeautifulSoup(response.content, 'html.parser')
+    #print(soup.prettify())
 
     print('文字コード（修正前）：', response.encoding)
 
     #自動検出したエンコード
-    a_encoding = response.apparent_encoding
+    #a_encoding = response.apparent_encoding
 
     #エンコードの自動検出に失敗した場合は、無理やり文字コードを設定。何にすればよいのか…。
     if a_encoding == None:
