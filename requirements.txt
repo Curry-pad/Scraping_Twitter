@@ -7,3 +7,4 @@ chardet
 charset-normalizer
 beautifulsoup4
 twikit
+XClientTransaction -U --no-cache-dir
