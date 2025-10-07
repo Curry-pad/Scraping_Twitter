@@ -10,6 +10,8 @@ def PublicTwitterAPI_Tweet():
   api_secret_key = os.getenv("a7QUOks1yW3iDO9OZG1WKCozDWS8j2fX4feLxPanrAGf8qM7Ae")
   access_token = os.getenv("1266022800071909377-OKjnTzl9dN6o84tlL3CJmwP5lJiiUs")
   access_token_secret = os.getenv("1YCEaUmh7CJxYeNXGODiC1bsFtlpEVxENTTUbA6VP75s0")
+
+  print("認証情報セットできた")
   
   # OAuth 1.0a認証を設定
   auth = OAuth1(api_key, api_secret_key, access_token, access_token_secret)
@@ -22,9 +24,13 @@ def PublicTwitterAPI_Tweet():
   
   # リクエストペイロード
   payload = {"text": tweet_content}
+
+  print("リクエスト開始")
   
   # POSTリクエストを送信
   response = requests.post(url, auth=auth, json=payload)
+
+  print("リクエストできた")
   
   # 結果を確認
   if response.status_code == 201:
