@@ -1,7 +1,7 @@
 #https://pypi.org/project/xclienttransaction/
 #できたぞ！！！XCTIの生成もできてる！！！
 def Get_XClientTransactionId(
-  endPointURL
+  url,method
 ):
 
   #まずはTwitterの入り口部分にアクセスして、XCTIの取得に必要な情報（ondemand_file_response）を取得する
@@ -38,28 +38,20 @@ def Get_XClientTransactionId(
   from urllib.parse import urlparse
   from x_client_transaction import ClientTransaction
   
-  # Example 1
   # replace the url and http method as per your use case
-  url = "https://x.com/i/api/1.1/jot/client_event.json"
-  method = "POST"
   path = urlparse(url=url).path
+  print("path:",path)
   # path will be /i/api/1.1/jot/client_event.json in this case
-  
-  # Example 2
-  user_by_screen_name_url = "https://x.com/i/api/graphql/1VOOyvKkiI3FMmkeDNxM9A/UserByScreenName"
-  user_by_screen_name_http_method = "GET"
-  user_by_screen_name_path = urlparse(url=url).path
-  # path will be /i/api/graphql/1VOOyvKkiI3FMmkeDNxM9A/UserByScreenName in this case
-  
-  
+
+  #x-client-transaction-idを生成する！！
   ct = ClientTransaction(home_page_response=home_page_response, ondemand_file_response=ondemand_file_response)
   transaction_id = ct.generate_transaction_id(method=method, path=path)
-  transaction_id_for_user_by_screen_name_endpoint = ct.generate_transaction_id(
-      method=user_by_screen_name_http_method, path=user_by_screen_name_path)
   
-  print(transaction_id)
-  print(transaction_id_for_user_by_screen_name_endpoint)
+  print("生成されたx-client-transaction-id：",transaction_id)
 
-  return transaction_id
+  #XCTIをレスポンスとして返却
+  return {
+    created_XCTI : transaction_id
+  }
   
 
