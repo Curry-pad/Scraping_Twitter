@@ -1,9 +1,12 @@
 
 def PublicTwitterAPI_Tweet():
 
+  print("PublicTwitterAPI_Tweet　はじめ")
   import os
   import requests
   from requests_oauthlib import OAuth1
+
+  print("認証情報取得　はじめ")
   
   # 環境変数から認証情報を取得
   api_key = os.getenv("OqxYkmu7PnTs6QQFljeu7fRZo")
