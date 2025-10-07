@@ -51,8 +51,8 @@ def Get_XClientTransactionId(
 
   #XCTIをレスポンスとして返却
   return {
-    "url" : url
-    "method" : method
+    "url" : url,
+    "method" : method,
     "created_XCTI" : transaction_id
   }
   
