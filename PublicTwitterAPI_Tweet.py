@@ -41,7 +41,7 @@ def PublicTwitterAPI_Tweet():
   authorization_url, state = twitter.authorization_url(AUTHORIZATION_BASE_URL)
   print(f"Visit this URL to authorize: {authorization_url}")
 
-  return
+  #return
   
   # ツイート内容の設定
   tweet_content = "Hello from OAuth 1.0a! This is an automated tweet."
