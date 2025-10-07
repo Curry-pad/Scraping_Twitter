@@ -3,7 +3,9 @@ def PublicTwitterAPI_Tweet():
 
   print("PublicTwitterAPI_Tweet　はじめ")
   import os
-  import requests
+
+  from curl_cffi import requests
+  #import requests
   from requests_oauthlib import OAuth1
 
   print("認証情報取得　はじめ")
