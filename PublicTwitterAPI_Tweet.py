@@ -18,6 +18,8 @@ def PublicTwitterAPI_Tweet():
   
   # OAuth 1.0a認証を設定
   auth = OAuth1(api_key, api_secret_key, access_token, access_token_secret)
+
+  print(auth)
   
   # ツイート内容の設定
   tweet_content = "Hello from OAuth 1.0a! This is an automated tweet."
