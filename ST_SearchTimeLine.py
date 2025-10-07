@@ -25,7 +25,7 @@ def SearchTimeLine(
   headers = {
     'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA',
     'Cookie': 'auth_token=' + auth_token + '; ct0=' + ct0 + '; ',
-    'x-client-transaction-id': xcti_res[“created_XCTI"],
+    'x-client-transaction-id': xcti_res["created_XCTI"],
     'x-csrf-token': ct0,
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
     "content-type": "application/json"
