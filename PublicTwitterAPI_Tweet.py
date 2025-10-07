@@ -55,7 +55,7 @@ def PublicTwitterAPI_Tweet():
   print("リクエスト開始")
   
   # POSTリクエストを送信
-  response = requests.post(url, auth=auth_info, json=payload)
+  response = requests.post(url, auth=twitter, json=payload)
 
   print("リクエストできた")
   
