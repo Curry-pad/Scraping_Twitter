@@ -3,6 +3,7 @@ def Twikit_Login(
   user_name,EMAIL,pass_word
 ):
 
+  from twikit import Client
   import asyncio
 
   # Initialize client
