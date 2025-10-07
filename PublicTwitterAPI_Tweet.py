@@ -19,9 +19,9 @@ def PublicTwitterAPI_Tweet():
   print("認証情報セットできた")
   
   # OAuth 1.0a認証を設定
-  auth = OAuth1(api_key, api_secret_key, access_token, access_token_secret)
+  auth_info = OAuth1(api_key, api_secret_key, access_token, access_token_secret)
 
-  print(auth)
+  print(auth_info)
   
   # ツイート内容の設定
   tweet_content = "Hello from OAuth 1.0a! This is an automated tweet."
@@ -35,7 +35,7 @@ def PublicTwitterAPI_Tweet():
   print("リクエスト開始")
   
   # POSTリクエストを送信
-  response = requests.post(url, auth=auth, json=payload)
+  response = requests.post(url, auth=auth_info, json=payload)
 
   print("リクエストできた")
   
