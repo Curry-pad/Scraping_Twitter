@@ -99,10 +99,10 @@ def read_item(
 
 @app.get("/Get_XClientTransactionId")
 def read_item(
-    endPointURL
+    url,method
 ):
     return Get_XClientTransactionId.Get_XClientTransactionId(
-        endPointURL
+        url,method
     )
 
 @app.get("/TweeterPy_Test")
