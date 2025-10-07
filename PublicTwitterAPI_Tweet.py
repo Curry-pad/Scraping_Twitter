@@ -6,7 +6,7 @@ def PublicTwitterAPI_Tweet():
 
   from curl_cffi import requests
   #import requests
-  from requests_oauthlib import OAuth1
+  from requests_oauthlib import OAuth1Session
 
   print("認証情報取得　はじめ")
   
@@ -19,7 +19,7 @@ def PublicTwitterAPI_Tweet():
   print("認証情報セットできた")
   
   # OAuth 1.0a認証を設定
-  auth_info = OAuth1(api_key, client_secret=api_secret_key, resource_owner_key=access_token, resource_owner_secret=access_token_secret)
+  auth_info = OAuth1Session(api_key, client_secret=api_secret_key, resource_owner_key=access_token, resource_owner_secret=access_token_secret)
 
   print(auth_info)
   
