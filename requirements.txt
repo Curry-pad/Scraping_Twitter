@@ -11,5 +11,4 @@ XClientTransaction
 tweeterpy
 curl_cffi
 requests-oauthlib
-twitter_xpff
 
