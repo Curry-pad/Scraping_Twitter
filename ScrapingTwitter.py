@@ -13,6 +13,7 @@ import ST_CreateTweet
 import Twikit_Login
 import Get_XClientTransactionId
 import TweeterPy_Test
+import PublicTwitterAPI_Tweet
 
 app = FastAPI()
 
@@ -107,3 +108,7 @@ def read_item(
 @app.get("/TweeterPy_Test")
 def read_item():
     return TweeterPy_Test.TweeterPy_Test()
+
+@app.get("/PublicTwitterAPI_Tweet")
+def read_item():
+    return PublicTwitterAPI_Tweet.PublicTwitterAPI_Tweet()
