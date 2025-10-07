@@ -6,10 +6,10 @@ def PublicTwitterAPI_Tweet():
   from requests_oauthlib import OAuth1
   
   # 環境変数から認証情報を取得
-  api_key = os.getenv("API_KEY")
-  api_secret_key = os.getenv("API_SECRET_KEY")
-  access_token = os.getenv("ACCESS_TOKEN")
-  access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
+  api_key = os.getenv("OqxYkmu7PnTs6QQFljeu7fRZo")
+  api_secret_key = os.getenv("a7QUOks1yW3iDO9OZG1WKCozDWS8j2fX4feLxPanrAGf8qM7Ae")
+  access_token = os.getenv("1266022800071909377-OKjnTzl9dN6o84tlL3CJmwP5lJiiUs")
+  access_token_secret = os.getenv("1YCEaUmh7CJxYeNXGODiC1bsFtlpEVxENTTUbA6VP75s0")
   
   # OAuth 1.0a認証を設定
   auth = OAuth1(api_key, api_secret_key, access_token, access_token_secret)
