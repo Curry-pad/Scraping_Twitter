@@ -1,4 +1,5 @@
-
+#https://pypi.org/project/xclienttransaction/
+#できたぞ！！！XCTIの生成もできてる！！！
 def Get_XClientTransactionId(
   endPointURL
 ):
@@ -31,7 +32,8 @@ def Get_XClientTransactionId(
   #とりあえずここまで、特にエラーにはならない。
   print("オンデマンドファイルURL：",ondemand_file_url)
   print("オンデマンドファイル：",ondemand_file)
-  print("オンデマンドファイルレスポンス：",ondemand_file_response)
+  #↓これを印字しようとすると、長くて真っ赤なログが出る。エラーになっているわけではなさそうだけど…。
+  #print("オンデマンドファイルレスポンス：",ondemand_file_response)
   
   from urllib.parse import urlparse
   from x_client_transaction import ClientTransaction
@@ -57,5 +59,7 @@ def Get_XClientTransactionId(
   
   print(transaction_id)
   print(transaction_id_for_user_by_screen_name_endpoint)
+
+  return transaction_id
   
 
