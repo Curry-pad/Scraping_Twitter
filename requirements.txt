@@ -10,4 +10,4 @@ twikit
 XClientTransaction
 tweeterpy
 curl_cffi
-
+requests-oauthlib
