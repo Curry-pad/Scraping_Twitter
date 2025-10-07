@@ -4,8 +4,8 @@ def PublicTwitterAPI_Tweet():
   print("PublicTwitterAPI_Tweet　はじめ")
   import os
 
-  from curl_cffi import requests
-  #import requests
+  #from curl_cffi import requests
+  import requests
   #from requests_oauthlib import OAuth1Session
   from requests_oauthlib import OAuth2Session
 
