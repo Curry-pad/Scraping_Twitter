@@ -32,7 +32,7 @@ def PublicTwitterAPI_Tweet():
   twitter = OAuth2Session(
       client_id=CLIENT_ID,
       redirect_uri=REDIRECT_URI,
-      scope=["tweet.read", "users.read", "offline.access"]  # Adjust scopes as needed
+      scope=["tweet.write","tweet.read", "users.read", "offline.access"]  # Adjust scopes as needed
   )
   
   #print(auth_info)
