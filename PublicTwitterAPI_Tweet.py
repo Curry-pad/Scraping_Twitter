@@ -35,7 +35,8 @@ def PublicTwitterAPI_Tweet():
       scope=["tweet.read", "users.read", "offline.access"]  # Adjust scopes as needed
   )
   
-  print(auth_info)
+  #print(auth_info)
+  print(twitter)
 
   authorization_url, state = twitter.authorization_url(AUTHORIZATION_BASE_URL)
   print(f"Visit this URL to authorize: {authorization_url}")
