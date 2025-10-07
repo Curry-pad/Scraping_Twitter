@@ -2,14 +2,11 @@
 def Twikit_Login(
   user_name,EMAIL,pass_word
 ):
-  
-  # with文で書き込む方法もあるが、今回は省略
-  from twikit import Client
 
   import asyncio
 
   # Initialize client
-  client = Client('en-US')
+  client = Client('ja')
 
   print("ユーザ名：",user_name)
   print("パスワード：",pass_word)
@@ -25,5 +22,5 @@ def Twikit_Login(
   asyncio.run(main())
   
   # ログイン情報を cookies.json に保存する
-  client.save_cookies("cookies.json")
+  #client.save_cookies("cookies.json")
   
