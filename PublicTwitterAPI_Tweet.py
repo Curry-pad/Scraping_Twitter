@@ -19,7 +19,7 @@ def PublicTwitterAPI_Tweet():
   print("認証情報セットできた")
   
   # OAuth 1.0a認証を設定
-  auth_info = OAuth1(api_key, api_secret_key, access_token, access_token_secret)
+  auth_info = OAuth1(api_key, client_secret=api_secret_key, resource_owner_key=access_token, resource_owner_secret=access_token_secret)
 
   print(auth_info)
   
