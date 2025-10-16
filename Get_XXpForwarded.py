@@ -37,7 +37,11 @@ def Get_Timestamp_Milliseconds():
   current_time_milliseconds = current_time_seconds * 1000
   print("現在時刻(ミリ秒):", current_time_milliseconds)
 
-  return current_time_milliseconds
+  #小数点以下切り捨て
+  millisec_num = int(current_time_milliseconds)
+
+  #文字列にしてから返却
+  return str(current_time_milliseconds)
 
 
   
