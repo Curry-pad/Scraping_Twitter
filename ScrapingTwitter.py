@@ -12,9 +12,10 @@ import ST_UsersLookup
 import ST_CreateTweet
 import Twikit_Login
 import Get_XClientTransactionId
+import Get_XXpForwarded
 import TweeterPy_Test
 import PublicTwitterAPI_Tweet
-import Create_XXpForwarded
+
 
 app = FastAPI()
 
@@ -98,6 +99,14 @@ def read_item(
         user_name,EMAIL,password
     )
 
+@app.get("/Get_XXpForwarded")
+def read_item(
+    guest_id
+):
+    return Get_XXpForwarded.Get_XXpForwarded(
+        guest_id
+    )
+
 @app.get("/Get_XClientTransactionId")
 def read_item(
     url,method
@@ -114,12 +123,6 @@ def read_item():
 def read_item():
     return PublicTwitterAPI_Tweet.PublicTwitterAPI_Tweet()
 
-@app.get("/Create_XXpForwarded")
-def read_item(
-    guest_id
-):
-    return Create_XXpForwarded.Create_XXpForwarded(
-        guest_id
-    )
+
 
 
