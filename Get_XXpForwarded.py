@@ -3,6 +3,15 @@ def Get_XXpForwarded(
   guest_id,user_agent
 ):
 
+  #もしもguest_idの登録がない場合は、ダミー値を設定して終了
+  if(guest_id == "undefined"):
+    return {
+      "base_key" : "",
+      "guest_id" : guest_id,
+      "Encrypted" : "119ee12fa18e9a0e0d9a160e7f730da5c071238572a4d832e01c3cc95d37f116145129fed2ff53622eb59778978b9c9b3b36c0004ff8b9cc218d81aaacb6103d5b77a21f98c19ecc75403342ae7a1a978a9f67b45a857cf1ce3eb51a94f1ea6969ca24a16c5006b82a82f3690f1f617dd18e6d6f703765323e925fe01d4f5a3b80849bc4c2c1a4d705270f0bffaee911fe0adde73cfdd218d1cb0938d6e4f311514a654be0195d520bda7067ff0741500cab341941d30ef199fc90f6aa850ce229a4f5a29c711dff5bb0ca010d0dc5acf05812aacb2eb0e39a42efb4829a6eaf3794406ef29af7d43efb94fdf923d70ac5339a8cd6d949b443ab",
+      "Decrypted" : ""
+    }
+
   import twitter_xpff
   from twitter_xpff import XPFFHeaderGenerator
 
