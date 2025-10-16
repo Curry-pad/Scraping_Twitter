@@ -6,13 +6,19 @@ def UsersLookup(
   from curl_cffi import requests
   import json
   import CommonFunction
+  import Get_XClientTransactionId
   
   url = "https://" + twitter_domain + "/i/api/1.1/users/lookup.json?include_profile_interstitial_type=1&include_blocking=1&include_blocked_by=1&include_followed_by=1&include_want_retweets=1&include_mute_edge=1&include_can_dm=1&include_can_media_tag=1&include_ext_is_blue_verified=1&include_ext_verified_type=1&include_ext_profile_image_shape=1&skip_status=1&user_id=" + uid_query
+
+  #XCTIを生成する。これがうまくいけば、引数のXCTIは不要になる
+  xcti_res = Get_XClientTransactionId.Get_XClientTransactionId(
+    url,"GET"
+  )
   
   headers = {
     'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA',
     'Cookie': 'auth_token=' + auth_token + '; ct0=' + ct0 + '; ',
-    'x-client-transaction-id': x_client_transaction_id,
+    'x-client-transaction-id': xcti_res["created_XCTI"],
     'x-csrf-token': ct0,
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
     "content-type": "application/json",
@@ -44,7 +50,7 @@ def UsersLookup(
   print('uid_query = ' + uid_query)
   print('ct0 = ' + ct0)
   print('auth_token = ' + auth_token)
-  print('x-client-transaction-id = ' + x_client_transaction_id)
+  print('x-client-transaction-id = ' + xcti_res["created_XCTI"])
   
   try:
 
