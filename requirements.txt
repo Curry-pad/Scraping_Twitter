@@ -11,4 +11,4 @@ XClientTransaction
 tweeterpy
 curl_cffi
 requests-oauthlib
-
+pycrypto
