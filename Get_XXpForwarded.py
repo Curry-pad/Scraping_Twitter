@@ -1,6 +1,6 @@
 #https://github.com/dsekz/twitter-x-xp-forwarded-for-header
 def Get_XXpForwarded(
-  guest_id
+  guest_id,user_agent
 ):
 
   import twitter_xpff
@@ -12,7 +12,7 @@ def Get_XXpForwarded(
   base_key = "0e6be1f1e21ffc33590b888fd4dc81b19713e570e805d4e5df80a493c9571a05"
   xpff_gen = XPFFHeaderGenerator(base_key)
   
-  xpff_plain = '{"navigator_properties":{"hasBeenActive":"true","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36","webdriver":"false"},"created_at":' + Get_Timestamp_Milliseconds() + '}'
+  xpff_plain = '{"navigator_properties":{"hasBeenActive":"true","userAgent":"' + user_agent + '","webdriver":"false"},"created_at":' + Get_Timestamp_Milliseconds() + '}'
   
   encrypted = xpff_gen.generate_xpff(xpff_plain, guest_id)
   print("Encrypted:", encrypted)
