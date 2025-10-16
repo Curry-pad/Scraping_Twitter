@@ -99,20 +99,20 @@ def read_item(
         user_name,EMAIL,password
     )
 
-@app.get("/Get_XXpForwarded")
-def read_item(
-    guest_id
-):
-    return Get_XXpForwarded.Get_XXpForwarded(
-        guest_id
-    )
-
 @app.get("/Get_XClientTransactionId")
 def read_item(
     url,method
 ):
     return Get_XClientTransactionId.Get_XClientTransactionId(
         url,method
+    )
+
+@app.get("/Get_XXpForwarded")
+def read_item(
+    guest_id
+):
+    return Get_XXpForwarded.Get_XXpForwarded(
+        guest_id
     )
 
 @app.get("/TweeterPy_Test")
