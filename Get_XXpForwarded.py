@@ -41,7 +41,7 @@ def Get_Timestamp_Milliseconds():
   millisec_num = int(current_time_milliseconds)
 
   #文字列にしてから返却
-  return str(current_time_milliseconds)
+  return str(millisec_num)
 
 
   
