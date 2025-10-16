@@ -8,10 +8,16 @@ def CreateTweet(
   from curl_cffi import requests
   import json
   import CommonFunction
+  import Get_XClientTransactionId
   
   query_id = 'ZSBCfCefJFumbPcLcwR64Q'
   
   url = "https://" + twitter_domain + "/i/api/graphql/" + query_id + "/CreateTweet"
+  
+  #XCTIを生成する。これがうまくいけば、引数のXCTIは不要になる
+  xcti_res = Get_XClientTransactionId.Get_XClientTransactionId(
+    url,"POST"
+  )
 
   options = {
     "variables": {
@@ -60,7 +66,7 @@ def CreateTweet(
   headers = {
     'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA',
     'Cookie': 'auth_token=' + auth_token + '; ct0=' + ct0 + '; ',
-    'x-client-transaction-id': x_client_transaction_id,
+    'x-client-transaction-id': xcti_res["created_XCTI"],
     'x-csrf-token': ct0,
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
     "content-type": "application/json"
