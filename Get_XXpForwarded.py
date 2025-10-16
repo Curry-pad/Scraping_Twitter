@@ -12,7 +12,7 @@ def Get_XXpForwarded(
   base_key = "0e6be1f1e21ffc33590b888fd4dc81b19713e570e805d4e5df80a493c9571a05"
   xpff_gen = XPFFHeaderGenerator(base_key)
   
-  xpff_plain = '{"navigator_properties":{"hasBeenActive":"true","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36","webdriver":"false"},"created_at":1750014202073}'
+  xpff_plain = '{"navigator_properties":{"hasBeenActive":"true","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36","webdriver":"false"},"created_at":' + Get_Timestamp_Milliseconds() + '}'
   
   encrypted = xpff_gen.generate_xpff(xpff_plain, guest_id)
   print("Encrypted:", encrypted)
@@ -26,3 +26,21 @@ def Get_XXpForwarded(
     "Encrypted" : encrypted,
     "Decrypted" : decrypted
   }
+
+#現在時刻、ゼロ日付からの経過時間を、ミリ秒単位で返す。
+def Get_Timestamp_Milliseconds():
+
+  import time
+  # 現在時刻を秒単位で取得
+  current_time_seconds = time.time()
+  # 秒からミリ秒に変換
+  current_time_milliseconds = current_time_seconds * 1000
+  print("現在時刻(ミリ秒):", current_time_milliseconds)
+
+  return current_time_milliseconds
+
+
+  
+  
+
+
