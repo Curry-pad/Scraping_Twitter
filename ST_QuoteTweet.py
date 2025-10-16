@@ -24,7 +24,7 @@ def QuoteTweet(
   headers = {
     'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA',
     'Cookie': 'auth_token=' + auth_token + '; ct0=' + ct0 + '; ',
-    'x-client-transaction-id': x_client_transaction_id,
+    'x-client-transaction-id': xcti_res["created_XCTI"],
     'x-csrf-token': ct0,
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
     "content-type": "application/json"
@@ -38,7 +38,7 @@ def QuoteTweet(
   print('twitter_domain = ' + twitter_domain)
   print('ct0 = ' + ct0)
   print('auth_token = ' + auth_token)
-  print('x-client-transaction-id = ' + x_client_transaction_id)
+  print('x-client-transaction-id = ' + xcti_res["created_XCTI"])
   print('cursor = ' + cursor)
   print('query = ' + query)
   print('max_count = ' + max_count)
