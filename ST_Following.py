@@ -17,7 +17,7 @@ def Following(
 
   #XCTIを生成する。これがうまくいけば、引数のXCTIは不要になる
   xcti_res = Get_XClientTransactionId.Get_XClientTransactionId(
-    url,"POST"
+    url,"GET"
   )
   
   headers = {
