@@ -21,6 +21,7 @@ def Create_XXpForwarded(
   print("Decrypted:", decrypted)
 
   return {
+    "base_key" : base_key,
     "guest_id" : guest_id,
     "Encrypted" : encrypted,
     "Decrypted" : decrypted
