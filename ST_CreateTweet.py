@@ -83,7 +83,7 @@ def CreateTweet(
   print('twitter_domain = ' + twitter_domain)
   print('ct0 = ' + ct0)
   print('auth_token = ' + auth_token)
-  print('x-client-transaction-id = ' + x_client_transaction_id)
+  print('x-client-transaction-id = ' + xcti_res["created_XCTI"])
   print('tw_text = ' + tw_text)
   print('Reply_Avail_Setting = ' + Reply_Avail_Setting)
   print('media_entities = ' + media_entities)
