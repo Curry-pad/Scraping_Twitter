@@ -5,6 +5,7 @@ def Followers(
   import requests
   import json
   import CommonFunction
+  import Get_XClientTransactionId
 
   #query_id = 'Elc_-qTARceHpztqhI9PQA'
   #2025/07/20 クエリIDが変わった
@@ -19,11 +20,16 @@ def Followers(
     cursor = ''
   
   url = "https://" + twitter_domain + "/i/api/graphql/" + query_id + "/Followers?variables=%7B%22userId%22%3A%22" + target_user_id + "%22%2C%22count%22%3A20%2C" + cursor + query_str
+
+  #XCTIを生成する。これがうまくいけば、引数のXCTIは不要になる
+  xcti_res = Get_XClientTransactionId.Get_XClientTransactionId(
+    url,"POST"
+  )
   
   headers = {
     'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA',
     'Cookie': 'auth_token=' + auth_token + '; ct0=' + ct0 + '; ',
-    'x-client-transaction-id': x_client_transaction_id,
+    'x-client-transaction-id': xcti_res["created_XCTI"],
     'x-csrf-token': ct0,
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
     "content-type": "application/json"
@@ -38,7 +44,7 @@ def Followers(
   print('target_user_id = ' + target_user_id)
   print('ct0 = ' + ct0)
   print('auth_token = ' + auth_token)
-  print('x-client-transaction-id = ' + x_client_transaction_id)
+  print('x-client-transaction-id = ' + xcti_res["created_XCTI"])
   print('cursor = ' + cursor)
   
   try:
