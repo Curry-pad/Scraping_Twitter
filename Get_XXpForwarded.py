@@ -1,5 +1,5 @@
 #https://github.com/dsekz/twitter-x-xp-forwarded-for-header
-def Create_XXpForwarded(
+def Get_XXpForwarded(
   guest_id
 ):
 
