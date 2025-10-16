@@ -1,6 +1,6 @@
 
 def Following(
-  twitter_domain,ct0,auth_token,x_client_transaction_id,target_user_id,cursor
+  twitter_domain,ct0,auth_token,target_user_id,cursor
 ):
   import requests
   import json
