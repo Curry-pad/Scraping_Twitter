@@ -109,10 +109,10 @@ def read_item(
 
 @app.get("/Get_XXpForwarded")
 def read_item(
-    guest_id
+    guest_id,user_agent
 ):
     return Get_XXpForwarded.Get_XXpForwarded(
-        guest_id
+        guest_id,user_agent
     )
 
 @app.get("/TweeterPy_Test")
