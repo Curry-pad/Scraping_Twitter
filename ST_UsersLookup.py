@@ -1,5 +1,5 @@
 def UsersLookup(
-  twitter_domain,ct0,auth_token,x_client_transaction_id,uid_query
+  twitter_domain,ct0,auth_token,uid_query
 ):
   
   #import requests
