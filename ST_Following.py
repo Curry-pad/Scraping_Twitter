@@ -1,11 +1,12 @@
 
 def Following(
-  twitter_domain,ct0,auth_token,target_user_id,cursor
+  twitter_domain,ct0,auth_token,guest_id,target_user_id,cursor
 ):
   import requests
   import json
   import CommonFunction
   import Get_XClientTransactionId
+  import Get_XXpForwarded
 
   query_id = 'C1qZ6bs-L3oc_TKSZyxkXQ'
 
@@ -19,13 +20,19 @@ def Following(
   xcti_res = Get_XClientTransactionId.Get_XClientTransactionId(
     url,"GET"
   )
+  #XPFFも取得する。
+  user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'
+  xpff_res = Get_XXpForwarded.Get_XXpForwarded(
+    guest_id,user_agent
+  )
   
   headers = {
     'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA',
     'Cookie': 'auth_token=' + auth_token + '; ct0=' + ct0 + '; ',
     'x-client-transaction-id': xcti_res["created_XCTI"],
     'x-csrf-token': ct0,
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
+    'User-Agent': user_agent,
+    'x-xp-forwarded-for' : xpff_res["Encrypted"],
     "content-type": "application/json"
   }
 
