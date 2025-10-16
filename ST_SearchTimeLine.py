@@ -39,7 +39,7 @@ def SearchTimeLine(
   print('twitter_domain = ' + twitter_domain)
   print('ct0 = ' + ct0)
   print('auth_token = ' + auth_token)
-  print('x-client-transaction-id = ' + x_client_transaction_id)
+  print('x-client-transaction-id = ' + xcti_res["created_XCTI"])
   print('cursor = ' + cursor)
   print('query = ' + query)
   print('max_count = ' + max_count)
