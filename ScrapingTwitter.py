@@ -115,7 +115,11 @@ def read_item():
     return PublicTwitterAPI_Tweet.PublicTwitterAPI_Tweet()
 
 @app.get("/Create_XXpForwarded")
-def read_item():
-    return Create_XXpForwarded.Create_XXpForwarded()
+def read_item(
+    guest_id
+):
+    return Create_XXpForwarded.Create_XXpForwarded(
+        guest_id
+    )
 
 
