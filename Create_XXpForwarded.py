@@ -19,3 +19,9 @@ def Create_XXpForwarded(
   
   decrypted = xpff_gen.decode_xpff(encrypted, guest_id)
   print("Decrypted:", decrypted)
+
+  return {
+    "guest_id" : guest_id,
+    "Encrypted" : encrypted,
+    "Decrypted" : decrypted
+  }
