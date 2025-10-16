@@ -53,10 +53,10 @@ def read_item(
 
 @app.get("/Followers")
 def read_item(
-    twitter_domain,ct0,auth_token,target_user_id,cursor
+    twitter_domain,ct0,auth_token,guest_id,target_user_id,cursor
 ):
     return ST_Followers.Followers(
-        twitter_domain,ct0,auth_token,target_user_id,cursor
+        twitter_domain,ct0,auth_token,guest_id,target_user_id,cursor
     )
 
 @app.get("/SearchTimeLine")
