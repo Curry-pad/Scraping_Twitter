@@ -1,7 +1,7 @@
 
 
 def CreateTweet(
-  twitter_domain,ct0,auth_token,x_client_transaction_id,tw_text,Reply_Avail_Setting,media_entities
+  twitter_domain,ct0,auth_token,tw_text,Reply_Avail_Setting,media_entities
 ):
   
   #import requests
