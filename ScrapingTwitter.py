@@ -10,6 +10,7 @@ import ST_SearchTimeLine
 import ST_QuoteTweet
 import ST_UsersLookup
 import ST_CreateTweet
+import ST_UserByRestId
 import Twikit_Login
 import Get_XClientTransactionId
 import Get_XXpForwarded
