@@ -16,7 +16,7 @@ import Get_XClientTransactionId
 import Get_XXpForwarded
 import TweeterPy_Test
 import PublicTwitterAPI_Tweet
-
+import Pseudo_MultiUsersInfo
 
 app = FastAPI()
 
@@ -98,6 +98,14 @@ def read_item(
 ):
     return ST_UserByRestId.UserByRestId(
         twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
+    )
+
+@app.get("/Pseudo_MultiUsersInfo")
+def read_item(
+    twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_uid_query
+):
+    return ST_Pseudo_MultiUsersInfo.Pseudo_MultiUsersInfo(
+        twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_uid_query
     )
 
 @app.get("/Twikit_Login")
