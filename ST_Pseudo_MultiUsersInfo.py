@@ -22,16 +22,16 @@ def Pseudo_MultiUsersInfo(
     )
 
     #データに欠けがある場合はスキップ
-    if(tmp_uinfo == None):
+    if(tmp_uinfo is None):
       continue
 
-    if(tmp_uinfo["data"] == None):
+    if(tmp_uinfo["data"] is None):
       continue
 
-    if(tmp_uinfo["data"]["user"] == None):
+    if(tmp_uinfo["data"]["user"] is None):
       continue
 
-    if(tmp_uinfo["data"]["user"]["result"] == None):
+    if(tmp_uinfo["data"]["user"]["result"] is None):
       continue
     
     #https://note.nkmk.me/python-list-append-extend-insert/
