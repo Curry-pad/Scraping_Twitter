@@ -13,15 +13,23 @@ def Pseudo_MultiUsersInfo(
 
   #戻り値返却用
   uinfo_array = []
+
+  u_max = len(target_uid_array)
+  u_count = 0
   
   #forでまわす
   for target_user_id in target_uid_array:
+
+    #1だけインクリメント
+    u_count += 1
+    
+    print("ユーザ：",u_count,"/",u_max,"人目")
 
     tmp_uinfo = ST_UserByRestId.UserByRestId(
       twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
     )
 
-    print(tmp_uinfo)
+    #print(tmp_uinfo)
     
     #データに欠けがある場合はスキップ
     if not tmp_uinfo:
@@ -39,6 +47,8 @@ def Pseudo_MultiUsersInfo(
     if not tmp_uinfo["data"]["user"]["result"]:
       print('データに欠けがあります(result)。')
       continue
+
+    print('データOK：正常なデータです。')
     
     #https://note.nkmk.me/python-list-append-extend-insert/
     uinfo_array.append(
