@@ -21,17 +21,23 @@ def Pseudo_MultiUsersInfo(
       twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
     )
 
+    print(tmp_uinfo)
+    
     #データに欠けがある場合はスキップ
     if(tmp_uinfo is None):
+      print('データに欠けがあります(tmp_uinfo)。')
       continue
 
     if(tmp_uinfo["data"] is None):
+      print('データに欠けがあります(data)。')
       continue
 
     if(tmp_uinfo["data"]["user"] is None):
+      print('データに欠けがあります(user)。')
       continue
 
     if(tmp_uinfo["data"]["user"]["result"] is None):
+      print('データに欠けがあります(result)。')
       continue
     
     #https://note.nkmk.me/python-list-append-extend-insert/
