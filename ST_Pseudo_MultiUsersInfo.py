@@ -1,3 +1,5 @@
+#なんちゃって（疑似的）複数人ユーザ情報取得
+#403エラーになって使えなくなってしまった複数人ユーザ情報取得(users/lookup)に代わり、UserByRestIdで疑似的にそれを実現する。
 def Pseudo_MultiUsersInfo(
   twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_uid_query
 ):
@@ -10,7 +12,29 @@ def Pseudo_MultiUsersInfo(
   target_uid_array = target_uid_query.split(',')
   
   #forでまわす
-  
+  for target_user_id in target_uid_array:
 
+    tmp_uinfo = ST_UserByRestId.UserByRestId(
+      twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
+    )
+
+    #データに欠けがある場合はスキップ
+    if(tmp_uinfo == None):
+      continue
+
+    if(tmp_uinfo.data == None):
+      continue
+
+    if(tmp_uinfo.data.user == None):
+      continue
+
+    if(tmp_uinfo.data.user.result == None):
+      continue
+    
+    #https://note.nkmk.me/python-list-append-extend-insert/
+    uinfo_array.append(
+      tmp_uinfo.data.user.result
+    )
   
-  #twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
+  
+  return uinfo_array
