@@ -24,19 +24,19 @@ def Pseudo_MultiUsersInfo(
     print(tmp_uinfo)
     
     #データに欠けがある場合はスキップ
-    if(tmp_uinfo is None):
+    if not tmp_uinfo:
       print('データに欠けがあります(tmp_uinfo)。')
       continue
 
-    if(tmp_uinfo["data"] is None):
+    if not tmp_uinfo["data"]:
       print('データに欠けがあります(data)。')
       continue
 
-    if(tmp_uinfo["data"]["user"] is None):
+    if not tmp_uinfo["data"]["user"]:
       print('データに欠けがあります(user)。')
       continue
 
-    if(tmp_uinfo["data"]["user"]["result"] is None):
+    if not tmp_uinfo["data"]["user"]["result"]:
       print('データに欠けがあります(result)。')
       continue
     
