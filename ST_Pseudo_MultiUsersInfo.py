@@ -10,6 +10,9 @@ def Pseudo_MultiUsersInfo(
   #そのため、ここでカンマで区切って配列にする
   #https://www.kikagaku.co.jp/kikagaku-blog/python-split/#i-1
   target_uid_array = target_uid_query.split(',')
+
+  #戻り値返却用
+  uinfo_array = []
   
   #forでまわす
   for target_user_id in target_uid_array:
