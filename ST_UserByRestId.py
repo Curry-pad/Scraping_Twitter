@@ -57,6 +57,7 @@ def UserByRestId(
   print('query_id = ' + query_id)
   print('target_user_id = ' + target_user_id)
   print('x-client-transaction-id = ' + xcti_res["created_XCTI"])
+  print('x-xp-forwarded-for = ' + xpff_res["Encrypted"])
   
   try:
 
