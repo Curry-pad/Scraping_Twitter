@@ -7,6 +7,7 @@ def UserByRestId(
   import json
   import CommonFunction
   import Get_XClientTransactionId
+  import Get_XXpForwarded
   
   url = "https://api." + twitter_domain + "/graphql/" + query_id + "/UserByRestId?variables=%7B%22userId%22%3A%22" + target_user_id + "%22%7D&features=" + features
 
