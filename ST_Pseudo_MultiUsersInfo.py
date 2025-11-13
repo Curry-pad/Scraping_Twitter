@@ -22,18 +22,18 @@ def Pseudo_MultiUsersInfo(
     if(tmp_uinfo == None):
       continue
 
-    if(tmp_uinfo.data == None):
+    if(tmp_uinfo[data] == None):
       continue
 
-    if(tmp_uinfo.data.user == None):
+    if(tmp_uinfo[data][user] == None):
       continue
 
-    if(tmp_uinfo.data.user.result == None):
+    if(tmp_uinfo[data][user][result] == None):
       continue
     
     #https://note.nkmk.me/python-list-append-extend-insert/
     uinfo_array.append(
-      tmp_uinfo.data.user.result
+      tmp_uinfo[data][user][result]
     )
   
   
