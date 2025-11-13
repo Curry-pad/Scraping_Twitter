@@ -94,10 +94,10 @@ def read_item(
 
 @app.get("/UserByRestId")
 def read_item(
-    twitter_domain,ct0,auth_token,query_id,features,user_agent,target_user_id
+    twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
 ):
     return ST_UserByRestId.UserByRestId(
-        twitter_domain,ct0,auth_token,query_id,features,user_agent,target_user_id
+        twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
     )
 
 @app.get("/Twikit_Login")
