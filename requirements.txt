@@ -7,7 +7,7 @@ chardet
 charset-normalizer
 beautifulsoup4
 twikit
-XClientTransaction
+XClientTransaction == 1.0.2
 tweeterpy
 curl_cffi
 requests-oauthlib
