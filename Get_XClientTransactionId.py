@@ -1,7 +1,7 @@
 #https://pypi.org/project/xclienttransaction/
 #できたぞ！！！XCTIの生成もできてる！！！
 def Get_XClientTransactionId(
-  auth_token,url,method
+  ct0,auth_token,url,method
 ):
 
   #まずはTwitterの入り口部分にアクセスして、XCTIの取得に必要な情報（ondemand_file_response）を取得する
@@ -14,8 +14,7 @@ def Get_XClientTransactionId(
   session.headers = generate_headers()
 
   session.cookies.set("auth_token",auth_token)
-  # ct0は必須ではないっぽい(auth_tokenがあればおｋ)
-  # session.cookies.set("ct0",ct0)
+  session.cookies.set("ct0",ct0)
   
   # GET HOME PAGE RESPONSE
   # required only when hitting twitter.com but not x.com
