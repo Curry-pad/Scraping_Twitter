@@ -119,10 +119,10 @@ def read_item(
 
 @app.get("/Get_XClientTransactionId")
 def read_item(
-    ct0,auth_token,url,method
+    auth_token,url,method
 ):
     return Get_XClientTransactionId.Get_XClientTransactionId(
-        ct0,auth_token,url,method
+        auth_token,url,method
     )
 
 @app.get("/Get_XXpForwarded")
