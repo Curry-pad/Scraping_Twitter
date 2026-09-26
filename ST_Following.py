@@ -18,7 +18,7 @@ def Following(
 
   #XCTIを生成する。これがうまくいけば、引数のXCTIは不要になる
   xcti_res = Get_XClientTransactionId.Get_XClientTransactionId(
-    url,"GET"
+    ct0,auth_token,url,"GET"
   )
   #XPFFも取得する。
   user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'
