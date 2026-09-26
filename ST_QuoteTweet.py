@@ -18,7 +18,7 @@ def QuoteTweet(
 
   #XCTIを生成する。これがうまくいけば、引数のXCTIは不要になる
   xcti_res = Get_XClientTransactionId.Get_XClientTransactionId(
-    url,"GET"
+    ct0,auth_token,url,"GET"
   )
   
   headers = {
