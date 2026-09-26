@@ -13,7 +13,7 @@ def UserByRestId(
 
   #XCTIを生成する。これがうまくいけば、引数のXCTIは不要になる
   xcti_res = Get_XClientTransactionId.Get_XClientTransactionId(
-    url,"GET"
+    ct0,auth_token,url,"GET"
   )
   #XPFFも取得する。
   xpff_res = Get_XXpForwarded.Get_XXpForwarded(
