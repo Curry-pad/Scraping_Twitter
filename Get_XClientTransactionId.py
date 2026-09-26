@@ -1,7 +1,7 @@
 #https://pypi.org/project/xclienttransaction/
 #できたぞ！！！XCTIの生成もできてる！！！
 def Get_XClientTransactionId(
-  ct0,auth_token,url,method
+  auth_token,url,method
 ):
 
   #まずはTwitterの入り口部分にアクセスして、XCTIの取得に必要な情報（ondemand_file_response）を取得する
