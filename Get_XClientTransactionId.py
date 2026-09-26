@@ -13,6 +13,7 @@ def Get_XClientTransactionId(
   session = requests.Session()
   session.headers = generate_headers()
 
+  # 2026/09/26　ct0とauth_token（=ユーザの認証情報）が必須になったようなので追加
   session.cookies.set("auth_token",auth_token)
   session.cookies.set("ct0",ct0)
   
