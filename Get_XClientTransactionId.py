@@ -17,11 +17,11 @@ def Get_XClientTransactionId(
   # GET HOME PAGE RESPONSE
   # required only when hitting twitter.com but not x.com
   # returns bs4.BeautifulSoup object
-  # home_page_response = handle_x_migration(session=session)
+  home_page_response = handle_x_migration(session=session)
   
   # for x.com no migration is required, just simply do
-  home_page = session.get(url="https://x.com/home")
-  home_page_response = bs4.BeautifulSoup(home_page.content, 'html.parser')
+  # home_page = session.get(url="https://x.com/home")
+  # home_page_response = bs4.BeautifulSoup(home_page.content, 'html.parser')
   
   
   # GET ondemand.s FILE RESPONSE
