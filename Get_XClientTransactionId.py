@@ -13,9 +13,8 @@ def Get_XClientTransactionId(
   session = requests.Session()
   session.headers = generate_headers()
 
-  session.cookies.set(
-    "auth_token",auth_token
-  )
+  session.cookies.set("auth_token",auth_token)
+  session.cookies.set("ct0",ct0)
   
   # GET HOME PAGE RESPONSE
   # required only when hitting twitter.com but not x.com
