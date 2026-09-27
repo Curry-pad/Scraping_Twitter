@@ -22,6 +22,13 @@ def Get_XClientTransactionId(
   # returns bs4.BeautifulSoup object
   home_page_response = handle_x_migration(session=session)
   
+  html = str(home_page_response)
+
+  print("HTML length:", len(html))
+  
+  for keyword in ["ondemand.s", "ondemand", "webpack", "main.js"]:
+    print(keyword, html.find(keyword))
+  
   # for x.com no migration is required, just simply do
   # home_page = session.get(url="https://x.com/home")
   # home_page_response = bs4.BeautifulSoup(home_page.content, 'html.parser')
