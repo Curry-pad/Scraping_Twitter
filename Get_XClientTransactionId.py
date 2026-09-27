@@ -39,7 +39,9 @@ def Get_XClientTransactionId(
   # GET ondemand.s FILE RESPONSE
   ondemand_file_url = get_ondemand_file_url(response=home_page_response)
   ondemand_file = session.get(url=ondemand_file_url)
-  ondemand_file_response = bs4.BeautifulSoup(ondemand_file.content, 'html.parser')
+  
+  #ondemand_file_response = bs4.BeautifulSoup(ondemand_file.content, 'html.parser')
+  ondemand_file_response = ondemand_file.text
 
   #とりあえずここまで、特にエラーにはならない。
   print("オンデマンドファイルURL：",ondemand_file_url)
