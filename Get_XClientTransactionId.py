@@ -25,6 +25,8 @@ def Get_XClientTransactionId(
   html = str(home_page_response)
 
   print("HTML length:", len(html))
+  print("ondemand.s:", "ondemand.s" in html)
+  print("ondemand:", "ondemand" in html)
   
   for keyword in ["ondemand.s", "ondemand", "webpack", "main.js"]:
     print(keyword, html.find(keyword))
