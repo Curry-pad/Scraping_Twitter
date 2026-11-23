@@ -29,7 +29,7 @@ def Pseudo_MultiUsersInfo(
       twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
     )
 
-    #print(tmp_uinfo)
+    print(tmp_uinfo)
     
     #データに欠けがある場合はスキップ
     if not tmp_uinfo:
