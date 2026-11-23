@@ -24,6 +24,7 @@ def Pseudo_MultiUsersInfo(
     u_count += 1
     
     print("ユーザ：",u_count,"/",u_max,"人目")
+    print("ユーザID：",target_user_id)
 
     tmp_uinfo = ST_UserByRestId.UserByRestId(
       twitter_domain,ct0,auth_token,query_id,features,guest_id,user_agent,target_user_id
