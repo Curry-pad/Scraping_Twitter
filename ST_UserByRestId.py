@@ -69,6 +69,8 @@ def UserByRestId(
   
     # レスポンスのステータスコードを表示
     print('ステータスコード:', response.status_code)
+    print(response.request.headers)
+    print(response.text)
 
     #ステータスコードが200番台ではないのにexceptに飛んでくれないことがある、その対策
     #検知条件：ステータスコードを100で割ったときの商が2でない
