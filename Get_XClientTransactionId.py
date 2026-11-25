@@ -7,6 +7,7 @@ def Get_XClientTransactionId(
   #まずはTwitterの入り口部分にアクセスして、XCTIの取得に必要な情報（ondemand_file_response）を取得する
   import bs4
   import requests
+  import Response
   from x_client_transaction.utils import generate_headers, handle_x_migration, get_ondemand_file_url
 
   try:
