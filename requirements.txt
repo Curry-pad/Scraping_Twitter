@@ -3,7 +3,6 @@ pathlib == 1.0.1
 starlette == 0.22.0
 uvicorn == 0.20.0
 requests
-Response
 chardet
 charset-normalizer
 beautifulsoup4
