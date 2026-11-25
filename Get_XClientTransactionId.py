@@ -23,7 +23,6 @@ def Get_XClientTransactionId(
   home_page_response = handle_x_migration(session=session)
 
   print(type(home_page_response))
-  print(len(str(home_page_response)))
   print(str(home_page_response)[:1000])
     
   html = str(home_page_response)
