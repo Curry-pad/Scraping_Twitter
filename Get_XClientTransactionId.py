@@ -26,7 +26,8 @@ def Get_XClientTransactionId(
   print(str(home_page_response)[:1000])
     
   html = str(home_page_response)
-  
+
+  print(html[-3000:])
   print("HTML length:", len(html))
   print("ondemand.s:", "ondemand.s" in html)
   print("ondemand:", "ondemand" in html)
