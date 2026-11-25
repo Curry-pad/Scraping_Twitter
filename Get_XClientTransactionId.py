@@ -23,11 +23,11 @@ def Get_XClientTransactionId(
   home_page_response = handle_x_migration(session=session)
 
   print(type(home_page_response))
-  print(str(home_page_response)[:1000])
+  #print(str(home_page_response)[:1000])
     
   html = str(home_page_response)
 
-  print(html[-3000:])
+  #print(html[-3000:])
   print("HTML length:", len(html))
   print("ondemand.s:", "ondemand.s" in html)
   print("ondemand:", "ondemand" in html)
