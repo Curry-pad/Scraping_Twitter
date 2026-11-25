@@ -65,7 +65,7 @@ def Get_XClientTransactionId(
     
     print("生成されたx-client-transaction-id：",transaction_id)
 
-  except:
+  except Exception as e:
     return {
       "error" : e
     }
