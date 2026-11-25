@@ -21,6 +21,10 @@ def Get_XClientTransactionId(
   # required only when hitting twitter.com but not x.com
   # returns bs4.BeautifulSoup object
   home_page_response = handle_x_migration(session=session)
+
+  print(type(home_page_response))
+  print(len(str(home_page_response)))
+  print(str(home_page_response)[:1000])
     
   html = str(home_page_response)
   
