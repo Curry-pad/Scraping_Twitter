@@ -56,6 +56,7 @@ def get_migration_form(response: bs4.BeautifulSoup):
 
 
 def get_ondemand_file_url(response: bs4.BeautifulSoup):
+    print("これは自前の関数「get_ondemand_file_url」です。自由に改造することができます。")
     on_demand_file_index = ON_DEMAND_FILE_REGEX.search(str(response)).group(1)
     regex = re.compile(ON_DEMAND_HASH_PATTERN.format(on_demand_file_index))
     filename = regex.search(str(response)).group(1)
