@@ -9,7 +9,7 @@ import bs4
 
 #新形式のファイルを見つけるための正規表現
 JS_FILE_REGEX = re.compile(
-    r"https://abs.twimg.com/x-web/x-web/assets/[^\"']+.js"
+    r"https://abs.twimg.com/x-web/x-web/[^\"']+.js"
 )
 
 from .constants import MIGRATION_REDIRECTION_REGEX, ON_DEMAND_FILE_REGEX, ON_DEMAND_FILE_URL, ON_DEMAND_HASH_PATTERN
