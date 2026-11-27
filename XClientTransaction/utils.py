@@ -63,20 +63,45 @@ def get_migration_form(response: bs4.BeautifulSoup):
 
 
 def get_ondemand_file_url(response: bs4.BeautifulSoup):
-    print("これは自前の関数「get_ondemand_file_url」です。自由に改造することができます。")
-    match = ON_DEMAND_FILE_REGEX.search(str(response))
-    if not match:
-        #raise Exception(
-        #    "ondemand.s not found in HTML"
-        #)
-        #これで動くか！？
-        return "https://abs.twimg.com/x-web/x-web/assets/Bd-QRjOx.js"
-    on_demand_file_index = match.group(1)
-    #on_demand_file_index = ON_DEMAND_FILE_REGEX.search(str(response)).group(1)
     
-    regex = re.compile(ON_DEMAND_HASH_PATTERN.format(on_demand_file_index))
-    filename = regex.search(str(response)).group(1)
-    return ON_DEMAND_FILE_URL.format(filename=filename)
+    print(
+        "これは自前の関数「get_ondemand_file_url」です。自由に改造することができます。"
+    )
+
+    html = str(response)
+
+    #
+    # 旧形式
+    #
+    match = ON_DEMAND_FILE_REGEX.search(html)
+
+    if match:
+
+        on_demand_file_index = match.group(1)
+
+        regex = re.compile(
+            ON_DEMAND_HASH_PATTERN.format(on_demand_file_index)
+        )
+
+        filename = regex.search(html).group(1)
+
+        return ON_DEMAND_FILE_URL.format(
+            filename=filename
+        )
+
+    #
+    # 新形式
+    #
+    print("ondemand.s が見つからないため、新形式探索を開始します")
+
+    new_style_url = find_new_style_js(html)
+
+    if new_style_url:
+        return new_style_url
+
+    raise Exception("ondemand file not found")
+
+
 
 def find_new_style_js(html):
 
@@ -84,13 +109,22 @@ def find_new_style_js(html):
 
     for js_url in js_urls:
 
-        js_text = requests.get(
-            js_url,
-            timeout=10
-        ).text
+        try:
+            print(f"チェック中:{js_url}")
+            
+            js_text = requests.get(
+                js_url,
+                timeout=10
+            ).text
 
-        if INDICES_REGEX.search(js_text):
-            return js_url
+            if INDICES_REGEX.search(js_text):
+                print(f"発見:{js_url}")
+                print(matches[:10])
+                return js_url
+            
+        except Exception as ex:
+            print(ex)
+            continue
 
     return None
 
