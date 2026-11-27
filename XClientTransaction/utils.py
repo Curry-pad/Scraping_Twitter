@@ -105,35 +105,51 @@ def get_ondemand_file_url(response: bs4.BeautifulSoup):
 
 def find_new_style_js(html):
 
-    print("========== HTML調査 ==========")
-    print("abs.twimg.com" in html)
-    print("x-web" in html)
-    print(".js" in html)
-    print(html[html.find("https://abs.twimg.com/x-web/x-web/assets/")-100 :
-        html.find("https://abs.twimg.com/x-web/x-web/assets/")+300])
-
     print("========== JS探索 ==========")
+
     js_urls = JS_FILE_REGEX.findall(html)
+
     print(f"件数:{len(js_urls)}")
-    
-    for js_url in js_urls:
+
+    for entry_url in js_urls:
 
         try:
-            print(f"チェック中:{js_url}")
-            
-            js_text = requests.get(
-                js_url,
+
+            print(f"チェック中:{entry_url}")
+
+            entry_text = requests.get(
+                entry_url,
                 timeout=10
             ).text
 
-            if INDICES_REGEX.search(js_text):
-                print(f"発見:{js_url}")
-                print(matches[:10])
-                return js_url
-            
+            asset_files = re.findall(
+                r'assets/[^"]+.js',
+                entry_text
+            )
+
+            print(f"asset件数:{len(asset_files)}")
+
+            for asset_file in asset_files:
+
+                asset_url = (
+                    "https://abs.twimg.com/x-web/x-web/"
+                    + asset_file
+                )
+
+                asset_text = requests.get(
+                    asset_url,
+                    timeout=10
+                ).text
+
+                if INDICES_REGEX.search(asset_text):
+
+                    print(f"発見:{asset_url}")
+
+                    return asset_url
+
         except Exception as ex:
+
             print(ex)
-            continue
 
     return None
 
