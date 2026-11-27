@@ -7,11 +7,6 @@ ON_DEMAND_FILE_URL: str = "https://abs.twimg.com/responsive-web/client-web/ondem
 ON_DEMAND_FILE_REGEX: re.Pattern = re.compile(
     r""",(\d+):["']ondemand\.s["']""", flags=(re.VERBOSE | re.MULTILINE))
 
-#新形式のファイルを見つけるための正規表現
-JS_FILE_REGEX = re.compile(
-    r"https://abs\.twimg\.com/x-web/x-web/assets/[^\"']+\.js"
-)
-
 ON_DEMAND_HASH_PATTERN: str = r',{}:\"([0-9a-f]+)\"'
 
 INDICES_REGEX: re.Pattern = re.compile(
