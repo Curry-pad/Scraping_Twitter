@@ -106,6 +106,8 @@ def get_ondemand_file_url(response: bs4.BeautifulSoup):
 def find_new_style_js(html):
 
     js_urls = JS_FILE_REGEX.findall(html)
+    print("========== JS探索 ==========")
+    print(f"件数:{len(js_urls)}")
 
     for js_url in js_urls:
 
