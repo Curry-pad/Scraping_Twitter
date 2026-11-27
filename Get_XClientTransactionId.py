@@ -35,8 +35,8 @@ def Get_XClientTransactionId(
       
     html = str(home_page_response)
 
-    #html全部出していいっすか！？
-    print(html)
+    #html全部出していいっすか！？→でかすぎて見づらい…
+    #print(html)
 
     #print("「home_page_response」の最後の3000行☟")
     #print(html[-3000:])
