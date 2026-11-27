@@ -1,6 +1,8 @@
 import base64
 import math
 import re
+#requests追加
+import requests
 from typing import Union
 
 import bs4
@@ -76,6 +78,21 @@ def get_ondemand_file_url(response: bs4.BeautifulSoup):
     filename = regex.search(str(response)).group(1)
     return ON_DEMAND_FILE_URL.format(filename=filename)
 
+def find_new_style_js(html):
+
+    js_urls = JS_FILE_REGEX.findall(html)
+
+    for js_url in js_urls:
+
+        js_text = requests.get(
+            js_url,
+            timeout=10
+        ).text
+
+        if INDICES_REGEX.search(js_text):
+            return js_url
+
+    return None
 
 def handle_x_migration(session):
     # for python requests -> session = requests.Session()
