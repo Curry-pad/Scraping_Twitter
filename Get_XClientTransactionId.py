@@ -35,6 +35,14 @@ def Get_XClientTransactionId(
       
     html = str(home_page_response)
 
+    output_FileName = datetime.datetime.now().strftime(
+      "XCTI_html_%Y%m%d_%H%M%S.html"
+    )
+    with open(output_FileName, "w", encoding="utf-8") as f:
+      f.write(html)
+    print("htmlファイル名☟")
+    print(output_FileName)
+
     #html全部出していいっすか！？→でかすぎて見づらい…
     #print(html)
 
