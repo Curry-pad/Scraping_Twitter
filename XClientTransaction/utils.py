@@ -136,6 +136,8 @@ def find_new_style_js(html):
                     + asset_file
                 )
 
+                print(asset_url)
+
                 asset_text = requests.get(
                     asset_url,
                     timeout=10
