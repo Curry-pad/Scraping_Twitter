@@ -138,6 +138,9 @@ def find_new_style_js(html):
 
                 print(asset_url)
 
+                #開発中につきいったんスキップ
+                continue
+
                 asset_text = requests.get(
                     asset_url,
                     timeout=10
