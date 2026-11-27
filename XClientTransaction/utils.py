@@ -59,9 +59,11 @@ def get_ondemand_file_url(response: bs4.BeautifulSoup):
     print("これは自前の関数「get_ondemand_file_url」です。自由に改造することができます。")
     match = ON_DEMAND_FILE_REGEX.search(str(response))
     if not match:
-        raise Exception(
-            "ondemand.s not found in HTML"
-        )
+        #raise Exception(
+        #    "ondemand.s not found in HTML"
+        #)
+        #これで動くか！？
+        return "https://abs.twimg.com/x-web/x-web/assets/Bd-QRjOx.js"
     on_demand_file_index = match.group(1)
     #on_demand_file_index = ON_DEMAND_FILE_REGEX.search(str(response)).group(1)
     
