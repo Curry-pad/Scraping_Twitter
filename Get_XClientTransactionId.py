@@ -35,8 +35,11 @@ def Get_XClientTransactionId(
       
     html = str(home_page_response)
 
-    print("「home_page_response」の最後の3000行☟")
-    print(html[-3000:])
+    #html全部出していいっすか！？
+    print(html)
+
+    #print("「home_page_response」の最後の3000行☟")
+    #print(html[-3000:])
     print("HTML length:", len(html))
     print("ondemand.s:", "ondemand.s" in html)
     print("ondemand:", "ondemand" in html)
