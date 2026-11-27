@@ -109,8 +109,8 @@ def find_new_style_js(html):
     print("abs.twimg.com" in html)
     print("x-web" in html)
     print(".js" in html)
-    print(html[html.find("abs.twimg.com")-100 :
-        html.find("abs.twimg.com")+300])
+    print(html[html.find("https://abs.twimg.com/x-web/x-web/assets/")-100 :
+        html.find("https://abs.twimg.com/x-web/x-web/assets/")+300])
 
     print("========== JS探索 ==========")
     js_urls = JS_FILE_REGEX.findall(html)
