@@ -12,7 +12,7 @@ JS_FILE_REGEX = re.compile(
     r"https://abs.twimg.com/x-web/x-web/[^\"']+.js"
 )
 
-from .constants import MIGRATION_REDIRECTION_REGEX, ON_DEMAND_FILE_REGEX, ON_DEMAND_FILE_URL, ON_DEMAND_HASH_PATTERN
+from .constants import MIGRATION_REDIRECTION_REGEX, ON_DEMAND_FILE_REGEX, ON_DEMAND_FILE_URL, ON_DEMAND_HASH_PATTERN,INDICES_REGEX
 
 
 class Math:
