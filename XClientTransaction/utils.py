@@ -136,7 +136,7 @@ def find_new_style_js(html):
                     + asset_file
                 )
 
-                print(asset_url)
+                #print(asset_url)
 
                 #開発中につきいったんスキップ
                 continue
