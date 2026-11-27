@@ -6,6 +6,7 @@ def Get_XClientTransactionId(
   
   import bs4
   import requests
+  import datetime
   from fastapi import HTTPException
   
   #from x_client_transaction.utils import generate_headers, handle_x_migration, get_ondemand_file_url
