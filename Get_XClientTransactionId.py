@@ -1,10 +1,12 @@
+import bs4
+from x_client_transaction import ClientTransaction
+
 #https://pypi.org/project/xclienttransaction/
 #できたぞ！！！XCTIの生成もできてる！！！
 def Get_XClientTransactionId(
   ct0,auth_token,url,method
 ):
   
-  import bs4
   import requests
   import datetime
   import traceback
@@ -77,7 +79,6 @@ def Get_XClientTransactionId(
     #print("オンデマンドファイルレスポンス：",ondemand_file_response)
       
     from urllib.parse import urlparse
-    from x_client_transaction import ClientTransaction
       
     # replace the url and http method as per your use case
     path = urlparse(url=url).path
