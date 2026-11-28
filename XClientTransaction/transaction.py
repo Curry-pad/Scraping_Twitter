@@ -58,8 +58,11 @@ class ClientTransaction:
         return list(base64.b64decode(bytes(key, 'utf-8')))
 
     def get_frames(self, home_page_response: bs4.BeautifulSoup) -> bs4.ResultSet:
+        print("これは自前の関数「get_frames」です。")
         # loading-x-anim-0...loading-x-anim-3
-        return home_page_response.select("[id^='loading-x-anim']")
+        #return home_page_response.select("[id^='loading-x-anim']")
+        # loading-x-anim-0 ... loading-x-anim-3 の <svg> だけを取得する
+        return home_page_response.select("svg[id^='loading-x-anim']")
 
     def get_2d_array(self, key_bytes: List[Union[float, int]], home_page_response: bs4.BeautifulSoup, frames: Optional[bs4.ResultSet] = None) -> List[List[int]]:
         if frames is None:
