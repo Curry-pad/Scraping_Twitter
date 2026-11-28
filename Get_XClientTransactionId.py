@@ -17,8 +17,6 @@ def Get_XClientTransactionId(
   #2026/11/25　get_ondemand_file_url関数に欠陥あり、この関数だけ自前にしてみる
   from XClientTransaction.utils import get_ondemand_file_url
 
-  from x_client_transaction import ClientTransaction
-
   try:
     
     #まずはTwitterの入り口部分にアクセスして、XCTIの取得に必要な情報（ondemand_file_response）を取得する
