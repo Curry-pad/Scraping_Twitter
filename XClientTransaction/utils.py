@@ -1,6 +1,7 @@
 import base64
 import math
 import re
+from pathlib import Path
 #requests追加
 import requests
 from typing import Union
@@ -10,6 +11,12 @@ import bs4
 #新形式のファイルを見つけるための正規表現
 JS_FILE_REGEX = re.compile(
     r"https://abs.twimg.com/x-web/x-web/[^\"']+.js"
+)
+
+BASE_URL = "https://abs.twimg.com/x-web/x-web/assets/"
+# ["可変部分"].forEach(function(name){var href="https://abs.twimg.com/x-web/x-web/assets/"+name+".js"
+PATTERN = re.compile(
+    r'\["([^"]+)"\]\.forEach\(function\(name\)\{var href="https://abs\.twimg\.com/x-web/x-web/assets/"\+name\+"\.js"'
 )
 
 from .constants import MIGRATION_REDIRECTION_REGEX, ON_DEMAND_FILE_REGEX, ON_DEMAND_FILE_URL, ON_DEMAND_HASH_PATTERN,INDICES_REGEX
@@ -102,61 +109,28 @@ def get_ondemand_file_url(response: bs4.BeautifulSoup):
     raise Exception("ondemand file not found")
 
 
-
+#新形式のhtmlからオンデマンドURLを取得する
 def find_new_style_js(html):
 
-    print("========== JS探索 ==========")
+    ondemand_urls = extract_ondemand_urls(html)
 
-    js_urls = JS_FILE_REGEX.findall(html)
+    #配列の一番最初の要素を取得して返却
+    return ondemand_urls[0]
 
-    print(f"件数:{len(js_urls)}")
-
-    for entry_url in js_urls:
-
-        try:
-
-            print(f"チェック中:{entry_url}")
-
-            entry_text = requests.get(
-                entry_url,
-                timeout=10
-            ).text
-
-            asset_files = re.findall(
-                r'assets/[^"]+.js',
-                entry_text
-            )
-
-            print(f"asset件数:{len(asset_files)}")
-
-            for asset_file in asset_files:
-
-                asset_url = (
-                    "https://abs.twimg.com/x-web/x-web/"
-                    + asset_file
-                )
-
-                #print(asset_url)
-
-                #開発中につきいったんスキップ
-                continue
-
-                asset_text = requests.get(
-                    asset_url,
-                    timeout=10
-                ).text
-
-                if INDICES_REGEX.search(asset_text):
-
-                    print(f"発見:{asset_url}")
-
-                    return asset_url
-
-        except Exception as ex:
-
-            print(ex)
-
-    return None
+#htmlレスポンスからオンデマンドURLを取得する
+def extract_ondemand_urls(html: str) -> list[str]:
+    urls = []
+    # 1. 全体の文字列をセミコロンで区切る
+    for chunk in html.split(";"):
+        # 2. 正規表現で探して可変部分を取得
+        match = PATTERN.search(chunk)
+        if match:
+            module_id = match.group(1)
+            # 3. 合体させて完成
+            url = f"{BASE_URL}{module_id}.js"
+            if url not in urls:
+                urls.append(url)
+    return urls
 
 def handle_x_migration(session):
     # for python requests -> session = requests.Session()
