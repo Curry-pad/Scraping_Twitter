@@ -17,6 +17,8 @@ def Get_XClientTransactionId(
   #2026/11/25　get_ondemand_file_url関数に欠陥あり、この関数だけ自前にしてみる
   from XClientTransaction.utils import get_ondemand_file_url
 
+  from x_client_transaction import ClientTransaction
+
   try:
     
     #まずはTwitterの入り口部分にアクセスして、XCTIの取得に必要な情報（ondemand_file_response）を取得する
@@ -85,7 +87,13 @@ def Get_XClientTransactionId(
     # path will be /i/api/1.1/jot/client_event.json in this case
     
     #x-client-transaction-idを生成する！！
-    ct = ClientTransaction(home_page_response=home_page_response, ondemand_file_response=ondemand_file_response)
+    #ct = ClientTransaction(home_page_response=home_page_response, ondemand_file_response=ondemand_file_response)
+
+    ct = CustomClientTransaction(
+      home_page_response=home_page_response,
+      ondemand_file_response=ondemand_file_response,
+    )
+    
     transaction_id = ct.generate_transaction_id(method=method, path=path)
       
     print("生成されたx-client-transaction-id：",transaction_id)
@@ -104,5 +112,10 @@ def Get_XClientTransactionId(
     "method" : method,
     "created_XCTI" : transaction_id
   }
-  
+
+#サブクラス
+class CustomClientTransaction(ClientTransaction):
+    def get_frames(self, home_page_response: bs4.BeautifulSoup) -> bs4.ResultSet:
+        # loading-x-anim-0 ... loading-x-anim-3 の <svg> だけを取得する
+        return home_page_response.select("svg[id^='loading-x-anim']")
 
