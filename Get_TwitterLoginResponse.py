@@ -1,5 +1,4 @@
-#https://pypi.org/project/xclienttransaction/
-#できたぞ！！！XCTIの生成もできてる！！！
+
 def Get_TwitterLoginResponse(
   ct0,auth_token,url
 ):
