@@ -1,5 +1,7 @@
 import bs4
-from x_client_transaction import ClientTransaction
+from XClientTransaction.transaction import ClientTransaction
+#from x_client_transaction import ClientTransaction
+from urllib.parse import urlparse
 
 #https://pypi.org/project/xclienttransaction/
 #できたぞ！！！XCTIの生成もできてる！！！
@@ -78,20 +80,18 @@ def Get_XClientTransactionId(
     #↓これを印字しようとすると、長くて真っ赤なログが出る。エラーになっているわけではなさそうだけど…。
     #print("オンデマンドファイルレスポンス：",ondemand_file_response)
       
-    from urllib.parse import urlparse
-      
     # replace the url and http method as per your use case
     path = urlparse(url=url).path
     print("path:",path)
     # path will be /i/api/1.1/jot/client_event.json in this case
     
     #x-client-transaction-idを生成する！！
-    #ct = ClientTransaction(home_page_response=home_page_response, ondemand_file_response=ondemand_file_response)
+    ct = ClientTransaction(home_page_response=home_page_response, ondemand_file_response=ondemand_file_response)
 
-    ct = CustomClientTransaction(
-      home_page_response=home_page_response,
-      ondemand_file_response=ondemand_file_response,
-    )
+    #ct = CustomClientTransaction(
+    #  home_page_response=home_page_response,
+    #  ondemand_file_response=ondemand_file_response,
+    #)
     
     transaction_id = ct.generate_transaction_id(method=method, path=path)
       
@@ -113,8 +113,8 @@ def Get_XClientTransactionId(
   }
 
 #サブクラス
-class CustomClientTransaction(ClientTransaction):
-    def get_frames(self, home_page_response: bs4.BeautifulSoup) -> bs4.ResultSet:
-        # loading-x-anim-0 ... loading-x-anim-3 の <svg> だけを取得する
-        return home_page_response.select("svg[id^='loading-x-anim']")
+#class CustomClientTransaction(ClientTransaction):
+#    def get_frames(self, home_page_response: bs4.BeautifulSoup) -> bs4.ResultSet:
+#        # loading-x-anim-0 ... loading-x-anim-3 の <svg> だけを取得する
+#        return home_page_response.select("svg[id^='loading-x-anim']")
 
