@@ -1,4 +1,5 @@
-
+import re
+from pathlib import Path
 # ["可変部分"].forEach(function(name){var href="https://abs.twimg.com/x-web/x-web/assets/"+name+".js"
 PATTERN = re.compile(
     r'\["([^"]+)"\]\.forEach\(function\(name\)\{var href="https://abs\.twimg\.com/x-web/x-web/assets/"\+name\+"\.js"'
