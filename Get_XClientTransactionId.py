@@ -7,6 +7,8 @@ def Get_XClientTransactionId(
   import bs4
   import requests
   import datetime
+  import traceback
+  
   from fastapi import HTTPException
   
   #from x_client_transaction.utils import generate_headers, handle_x_migration, get_ondemand_file_url
@@ -89,9 +91,11 @@ def Get_XClientTransactionId(
     print("生成されたx-client-transaction-id：",transaction_id)
 
   except Exception as e:
+    print("=== エラー詳細 ===")
+    traceback.print_exc()
     raise HTTPException(
-      status_code=500,
-      detail=str(e)
+        status_code=500,
+        detail=f"{type(e).__name__}: {e}",
     )
   
   #XCTIをレスポンスとして返却
