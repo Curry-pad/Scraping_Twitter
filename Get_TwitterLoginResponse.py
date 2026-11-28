@@ -1,6 +1,6 @@
 
 def Get_TwitterLoginResponse(
-  ct0,auth_token,url
+  ct0,auth_token
 ):
   
   import bs4
