@@ -50,6 +50,9 @@ def Get_TwitterLoginResponse(
     if anim_frames:
         print("anim_frames[0]:", str(anim_frames[0])[:500])
         print("paths in anim_frames[0]:", len(anim_frames[0].select("path")))
+    
+    for i, el in enumerate(anim_frames):
+        print(f"[{i}] tag={el.name}, id={el.get('id')}, paths={len(el.select('path'))}")
 
   except Exception as e:
     raise HTTPException(
