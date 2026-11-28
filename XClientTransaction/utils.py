@@ -92,9 +92,14 @@ def get_ondemand_file_url(response: bs4.BeautifulSoup):
 
         filename = regex.search(html).group(1)
 
-        return ON_DEMAND_FILE_URL.format(
+        ondemand_file_url = ON_DEMAND_FILE_URL.format(
             filename=filename
         )
+
+        print("旧形式　オンデマンドURL☟")
+        print(ondemand_file_url)
+
+        return ondemand_file_url
 
     #
     # 新形式
