@@ -16,7 +16,6 @@ def Get_XClientTransactionId(
 
   #2026/11/25　get_ondemand_file_url関数に欠陥あり、この関数だけ自前にしてみる
   from XClientTransaction.utils import get_ondemand_file_url
-  from XClientTransaction.transaction import ClientTransaction.__init__
 
   try:
     
