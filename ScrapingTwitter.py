@@ -17,6 +17,7 @@ import Get_XClientTransactionId
 import Get_XXpForwarded
 import TweeterPy_Test
 import PublicTwitterAPI_Tweet
+import Get_TwitterLoginResponse
 
 
 app = FastAPI()
@@ -131,6 +132,14 @@ def read_item(
 ):
     return Get_XXpForwarded.Get_XXpForwarded(
         guest_id,user_agent
+    )
+
+@app.get("/Get_TwitterLoginResponse")
+def read_item(
+    ct0,auth_token
+):
+    return Get_TwitterLoginResponse.Get_TwitterLoginResponse(
+        ct0,auth_token
     )
 
 @app.get("/TweeterPy_Test")
