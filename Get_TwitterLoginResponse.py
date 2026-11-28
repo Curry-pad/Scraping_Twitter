@@ -1,4 +1,9 @@
 
+# ["可変部分"].forEach(function(name){var href="https://abs.twimg.com/x-web/x-web/assets/"+name+".js"
+PATTERN = re.compile(
+    r'\["([^"]+)"\]\.forEach\(function\(name\)\{var href="https://abs\.twimg\.com/x-web/x-web/assets/"\+name\+"\.js"'
+)
+
 def Get_TwitterLoginResponse(
   ct0,auth_token
 ):
@@ -35,6 +40,8 @@ def Get_TwitterLoginResponse(
       
     html = str(home_page_response)
 
+    ondemand_urls = extract_js_urls(html)
+
   except Exception as e:
     raise HTTPException(
       status_code=500,
@@ -43,6 +50,22 @@ def Get_TwitterLoginResponse(
   
   #htmlをレスポンスとして返却
   return {
-    "html" : html
+    "ondemand_urls" : ondemand_urls
   }
-  
+
+def extract_js_urls(html: str) -> list[str]:
+    urls = []
+    # 1. 全体の文字列をセミコロンで区切る
+    for chunk in html.split(";"):
+        # 2. 正規表現で探して可変部分を取得
+        match = PATTERN.search(chunk)
+        if match:
+            module_id = match.group(1)
+            # 3. 合体させて完成
+            url = f"{BASE_URL}{module_id}.js"
+            if url not in urls:
+                urls.append(url)
+    return urls
+
+
+
