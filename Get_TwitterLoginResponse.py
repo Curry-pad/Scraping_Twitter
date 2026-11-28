@@ -45,6 +45,12 @@ def Get_TwitterLoginResponse(
 
     ondemand_urls = extract_js_urls(html)
 
+    anim_frames = home_page_response.select("[id^='loading-x-anim']")
+    print("anim_frames count:", len(anim_frames))
+    if anim_frames:
+        print("anim_frames[0]:", str(anim_frames[0])[:500])
+        print("paths in anim_frames[0]:", len(anim_frames[0].select("path")))
+
   except Exception as e:
     raise HTTPException(
       status_code=500,
