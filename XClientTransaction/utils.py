@@ -114,6 +114,9 @@ def find_new_style_js(html):
 
     ondemand_urls = extract_ondemand_urls(html)
 
+    print("新形式　オンデマンドURL☟")
+    print(ondemand_urls)
+
     #配列の一番最初の要素を取得して返却
     return ondemand_urls[0]
 
